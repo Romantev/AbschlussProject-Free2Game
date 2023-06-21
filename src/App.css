@@ -17,3 +17,8 @@ html {
     font-size: 62.5%;
     background-color: var(--navydark);
 }
+
+ 
+img {
+  max-width: 100%;
+}

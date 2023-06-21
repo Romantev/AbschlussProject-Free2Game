@@ -1,3 +1,4 @@
+
 import "./GameCardSmall.css";
 
 const GameCardSmall = (props) => {
@@ -26,3 +27,4 @@ const GameCardSmall = (props) => {
 };
 
 export default GameCardSmall;
+
