@@ -1,0 +1,23 @@
+:root {
+  --flamingo: #ff4654;
+  --navydark: #040f14;
+  --navylight: #102130;
+  --navydesat: #375470;
+  --babyblue: #afc7df;
+  --white: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
+}

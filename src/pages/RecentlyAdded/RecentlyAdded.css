@@ -1,0 +1,8 @@
+.recently-added {
+  margin-left: 80px;
+  height: 100vw;
+  width: 100vw;
+  background-color: var(--navydark);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
