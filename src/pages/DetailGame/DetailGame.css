@@ -1,0 +1,264 @@
+/* ! ++++++++++ BASIC ++++++++++ */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url(../../assets/Oswald/static/Oswald-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url(../../assets/Oswald/static/Oswald-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Light";
+  src: url(../../assets/Oswald/static/Oswald-Light.ttf);
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Regular";
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 4.8rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+  font-family: "Light";
+}
+
+button {
+  width: 12rem;
+  height: 5rem;
+  background-color: #ff4654;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+}
+
+.genre {
+  width: 10rem;
+  height: 3.5rem;
+  padding: 6px 12px;
+  color: white;
+  background-color: #102130;
+  border: 2px solid #ff4654;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ! ++++++++++ WRAPPER ++++++++++ */
+
+.wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 10rem;
+  padding-left: 10rem;
+  padding-right: 2.5rem;
+  background-color: black;
+  color: white;
+}
+
+/* ! ++++++++++ DETAIL-GAME-SECTION ++++++++++ */
+
+.detail-game-section {
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+/* ! ++++++++++ DETAIL-GAME-SECTION-IMG ++++++++++ */
+
+.detail-game-section .header-img {
+  width: 100%;
+  margin-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.detail-game-section .header-img img {
+  width: 140rem;
+  height: 50rem;
+  border-radius: 10px;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+/* ! ++++++++++ GAME-DETAILS ++++++++++ */
+
+.detail-game-section .game-details {
+  max-width: 90%;
+  min-height: 60rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-game-section .game-details .game-details-right,
+.detail-game-section .game-details .game-details-left {
+  width: 45rem;
+  height: 100%;
+}
+
+/* ! ++++++++++ GAME-DETAILS-LEFT ++++++++++ */
+
+.detail-game-section .game-details .game-details-left h2 {
+  font-family: "Bold";
+  margin-bottom: 5rem;
+}
+
+.detail-game-section .game-details .game-details-left img {
+  width: 49rem;
+  height: 28rem;
+  border-radius: 1rem;
+  object-fit: cover;
+  margin-bottom: 2rem;
+}
+
+.detail-game-section .game-details .game-details-left h3 {
+  margin-bottom: 2rem;
+}
+
+.detail-game-section .game-details .game-details-left h4 {
+  margin-bottom: 2rem;
+}
+
+/* ! ++++++++++ GAME-DETAILS-RIGHT ++++++++++ */
+
+.detail-game-section .game-details .game-details-right h3 {
+  margin-bottom: 2rem;
+}
+
+.detail-game-section .game-details .game-details-right p {
+  line-height: 2.4rem;
+  max-width: 40rem;
+}
+
+/* ! ++++++++++ GAME-REQUIREMENTS ++++++++++ */
+
+.detail-game-section .game-requirements {
+  width: 100%;
+  min-height: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.detail-game-section .game-requirements h3 {
+  margin-bottom: 3.4rem;
+}
+
+.detail-game-section .game-requirements h4 {
+  margin-bottom: 1.2rem;
+}
+
+.detail-game-section .game-requirements p {
+  margin-bottom: 2.6rem;
+}
+
+/* ! ++++++++++ GAME-REQUIREMENTS-IMAGES ++++++++++ */
+
+.detail-game-section .game-requirements .game-requirements-images {
+  width: 100%;
+  height: 45rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-game-section .game-requirements .game-requirements-images img {
+  width: 59rem;
+  height: 35rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* ! ++++++++++ GAME-REQUIREMENTS-DATA ++++++++++ */
+
+.detail-game-section .game-requirements .game-requirements-data {
+  width: 100%;
+  height: 50rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* ! ++++++++++ GAME-REQUIREMENTS-DATA-LEFT ++++++++++ */
+
+.detail-game-section .game-requirements .game-requirements-data-left {
+  width: 44rem;
+}
+
+.detail-game-section .game-requirements .game-requirements-data-left div {
+  width: 29rem;
+  height: 2.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ! ++++++++++ GAME-REQUIREMENTS-DATA-RIGHT ++++++++++ */
+
+.detail-game-section .game-requirements .game-requirements-data-right {
+  width: 54rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.detail-game-section
+  .game-requirements
+  .game-requirements-data-right
+  .data-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.detail-game-section
+  .game-requirements
+  .game-requirements-data-right
+  .data-wrapper
+  .data-left,
+.detail-game-section
+  .game-requirements
+  .game-requirements-data-right
+  .data-wrapper
+  .data-right {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
