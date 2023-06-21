@@ -5,11 +5,21 @@ const DetailGame = () => {
   const [gameData, setGameData] = useState();
 
   useEffect(() => {
-    fetch("https://www.freetogame.com/api/game?id=452")
+    fetch("https://www.freetogame.com/api/game?id=475")
+      .then((res) => res.json())
+      .then((data) => {
+        setGameData(data);
+      })
+      .catch((err) => {
+        console.log("Fehler beim Laden", err);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://www.freetogame.com/api/games")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setGameData(data);
       })
       .catch((err) => {
         console.log("Fehler beim Laden", err);
