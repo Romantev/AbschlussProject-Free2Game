@@ -1,0 +1,19 @@
+:root {
+    --flamingo: #FF4654;
+    --navydark: #040F14;
+    --navylight: #102130;
+    --navydesat: #375470;
+    --babyblue: #AFC7DF;
+    --white: #FFFFFF;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    background-color: var(--navydark);
+}
