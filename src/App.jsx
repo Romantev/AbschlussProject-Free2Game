@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import RecentlyAdded from "./pages/RecentlyAdded/RecentlyAdded";
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
       </BrowserRouter>
     </>
   );
+
 }
 
 export default App;

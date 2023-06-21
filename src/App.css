@@ -1,23 +1,24 @@
 :root {
-  --flamingo: #ff4654;
-  --navydark: #040f14;
-  --navylight: #102130;
-  --navydesat: #375470;
-  --babyblue: #afc7df;
-  --white: #ffffff;
+    --flamingo: #FF4654;
+    --navydark: #040F14;
+    --navylight: #102130;
+    --navydesat: #375470;
+    --babyblue: #AFC7DF;
+    --white: #FFFFFF;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  color: white;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
+    background-color: var(--navydark);
 }
 
+ 
 img {
   max-width: 100%;
 }
