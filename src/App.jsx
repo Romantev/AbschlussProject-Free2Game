@@ -1,10 +1,20 @@
 import "./App.css";
-import DetailGame from "./pages/DetailGame/DetailGame";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Home from "./pages/Home/Home";
+import RecentlyAdded from "./pages/RecentlyAdded/RecentlyAdded";
 
 function App() {
+
   return (
     <>
-      <DetailGame />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recently-added" element={<RecentlyAdded />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
