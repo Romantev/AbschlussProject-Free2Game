@@ -1,10 +1,13 @@
 import "./App.css";
+
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { gameContext, searchInputContext } from "./context/Context";
+
 import Home from "./pages/Home/Home";
 import RecentlyAdded from "./pages/RecentlyAdded/RecentlyAdded";
 import DetailGame from "./pages/DetailGame/DetailGame";
-import { useState } from "react";
-import { gameContext, searchInputContext } from "./context/Context";
+import Allgames from "./pages/AllGames/AllGames";
 
 function App() {
   const [gameData, setGameData] = useState([]);
@@ -19,6 +22,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/recently-added" element={<RecentlyAdded />} />
               <Route path="/:gameid" element={<DetailGame />} />
+              <Route path="/all-games" element={<Allgames />} />
             </Routes>
           </BrowserRouter>
         </gameContext.Provider>

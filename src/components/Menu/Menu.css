@@ -39,6 +39,7 @@
   border: none;
   transform: scale(1.2);
   color: white;
+  text-decoration: none;
 }
 
 .menu-button div {
