@@ -43,13 +43,9 @@ const DetailGame = () => {
             <article className="header-img">
               <img src={gameData.screenshots[0].image} alt={gameData.title} />
             </article>
-            <p>"Button nur für schnelle Navigation"</p>
-            <Link to="/">
-              <Button btntext="Back" />
-            </Link>
+            <h2 className="game-title">{gameData.title}</h2>
             <article className="game-details">
               <div className="game-details-left">
-                <h2>{gameData.title}</h2>
                 <div>
                   <img
                     src={gameData.thumbnail}
