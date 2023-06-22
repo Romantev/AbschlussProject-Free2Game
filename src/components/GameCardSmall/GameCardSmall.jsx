@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import "./GameCardSmall.css";
+import Windows from "../../assets/Platforms/Windows.svg";
+import Browser from "../../assets/Platforms/Browser.svg";
 
 const GameCardSmall = (props) => {
   return (
@@ -21,7 +23,13 @@ const GameCardSmall = (props) => {
 
         <hr className="card-line" />
         <div className="row">
-          <span className="card-genre-and-platform">{props.game.platform}</span>
+          <span className="card-genre-and-platform">
+            {props.game.platform === "PC (Windows)" ? (
+              <img src={Windows} alt={props.game.title} />
+            ) : (
+              <img src={Browser} alt={props.game.title} />
+            )}
+          </span>
           <span className="card-genre-and-platform">{props.game.genre}</span>
         </div>
         </div>
