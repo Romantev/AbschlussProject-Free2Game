@@ -16,15 +16,15 @@ const NavBar = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleSearch = (e) => {
-    setSearchInput(e.target.value);
-  };
-
   return (
     <>
       <div className="navbar-search">
         <img src={logo} alt="Logo" />
-        <input type="text" value={searchInput} onChange={handleSearch} />
+        <input
+          type="text"
+          value={searchInput}
+          onChange={(event) => setSearchInput(event.target.value)}
+        />
       </div>
     </>
   );

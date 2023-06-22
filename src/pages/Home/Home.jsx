@@ -9,9 +9,6 @@ const Home = () => {
   const { gameData, setGameData } = useContext(gameContext);
   const { searchInput, setSearchInput } = useContext(searchInputContext);
 
-  console.log(searchInput);
-  console.log(gameData);
-
   const filteredData = gameData.filter((item) =>
     item.title.toLowerCase().includes(searchInput.toLowerCase())
   );
