@@ -14,16 +14,18 @@ const Menu = () => {
 
   const openMenuBar = () => {
     setMenuBar(true);
+    console.log(menuBar);
   };
 
   const closeMenuBar = () => {
     setMenuBar(false);
+    console.log(menuBar);
   };
 
   return (
     <>
       {menuBar ? (
-        // MenuBar open //
+        //* MenuBar open //
         <div className="super-wrapper">
           <div className="menu-bar-open">
             <button onClick={closeMenuBar} className="menu-button-close">
@@ -50,10 +52,9 @@ const Menu = () => {
               </NavLink>
             </div>
           </div>
-          <main></main>
         </div>
       ) : (
-        // MenuBar closed //
+        //* MenuBar closed //
         <div className="super-wrapper">
           <div className="menu-bar-close">
             <button onClick={openMenuBar} className="menu-button">
