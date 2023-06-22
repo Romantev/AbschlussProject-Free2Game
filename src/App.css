@@ -1,10 +1,10 @@
 :root {
-    --flamingo: #FF4654;
-    --navydark: #040F14;
-    --navylight: #102130;
-    --navydesat: #375470;
-    --babyblue: #AFC7DF;
-    --white: #FFFFFF;
+  --flamingo: #ff4654;
+  --navydark: #040f14;
+  --navylight: #102130;
+  --navydesat: #375470;
+  --babyblue: #afc7df;
+  --white: #ffffff;
 }
 
 * {
@@ -33,7 +33,6 @@ html {
   font-family: "Regular";
   overflow-x: hidden;
   background-color: var(--navydark);
-
 }
 
 img {

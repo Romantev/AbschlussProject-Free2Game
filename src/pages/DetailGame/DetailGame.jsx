@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "./DetailGame.css";
+import { useParams } from "react-router-dom";
 
 const DetailGame = () => {
+  const params = useParams();
   const [gameData, setGameData] = useState();
 
   useEffect(() => {
-    fetch("https://www.freetogame.com/api/game?id=475")
+    fetch(`https://www.freetogame.com/api/game?id=${params.gameid}`)
       .then((res) => res.json())
       .then((data) => {
         setGameData(data);
