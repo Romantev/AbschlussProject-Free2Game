@@ -3,9 +3,6 @@
 .wrapper {
   width: 100vw;
   min-height: 100vh;
-  padding-top: 10rem;
-  padding-left: 10rem;
-  padding-right: 2.5rem;
   background-color: var(--navydark);
   color: white;
 }
@@ -15,6 +12,7 @@
 .detail-game-section {
   max-width: 140rem;
   margin: 0 auto;
+  padding: 10rem;
 }
 
 /* ! ++++++++++ DETAIL-GAME-SECTION-IMG ++++++++++ */
@@ -29,9 +27,9 @@
 }
 
 .detail-game-section .header-img img {
-  width: 140rem;
-  height: 50rem;
-  border-radius: 10px;
+  width: 100%;
+  height: 60rem;
+  border-radius: 1rem;
   margin: 0 auto;
   object-fit: cover;
 }
@@ -41,7 +39,7 @@
 .detail-game-section .game-details {
   max-width: 90%;
   min-height: 60rem;
-  margin: 0 auto;
+  margin: 0 auto 10rem auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -96,103 +94,115 @@
   text-align: justify;
 }
 
+/* ! ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
 /* ! ++++++++++ GAME-REQUIREMENTS ++++++++++ */
 
 .detail-game-section .game-requirements {
   width: 100%;
-  min-height: 60rem;
+  height: 60rem;
+  margin-bottom: 10rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  flex-direction: column;
-}
-
-.detail-game-section .game-requirements h3 {
-  margin-bottom: 3.4rem;
-}
-
-.detail-game-section .game-requirements h4 {
-  margin-bottom: 1.2rem;
-}
-
-.detail-game-section .game-requirements p {
-  margin-bottom: 2.6rem;
+  gap: 5rem;
 }
 
 /* ! ++++++++++ GAME-REQUIREMENTS-IMAGES ++++++++++ */
 
-.detail-game-section .game-requirements .game-requirements-images {
-  width: 100%;
-  height: 45rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.detail-game-section .game-requirements .game-requirements-images img {
-  width: 59rem;
+.detail-game-section .game-requirements .game-requirements-left img,
+.detail-game-section .game-requirements .game-requirements-right img {
+  max-width: 100%;
   height: 35rem;
+  margin-bottom: 5rem;
   object-fit: cover;
   border-radius: 1rem;
 }
 
 /* ! ++++++++++ GAME-REQUIREMENTS-DATA ++++++++++ */
 
-.detail-game-section .game-requirements .game-requirements-data {
-  width: 100%;
-  height: 50rem;
+.detail-game-section .game-requirements .game-requirements-left,
+.detail-game-section .game-requirements .game-requirements-right {
+  width: 50%;
+  height: 100%;
+  padding-left: 2rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-direction: column;
 }
 
-/* ! ++++++++++ GAME-REQUIREMENTS-DATA-LEFT ++++++++++ */
+/* ! ++++++++++ GAME-REQUIREMENTS-LEFT-DATA ++++++++++ */
 
-.detail-game-section .game-requirements .game-requirements-data-left {
-  width: 44rem;
+.detail-game-section
+  .game-requirements
+  .game-requirements-left
+  .game-requirements-left-data
+  h3 {
+  margin-bottom: 2rem;
 }
 
-.detail-game-section .game-requirements .game-requirements-data-left div {
-  width: 29rem;
-  height: 2.5rem;
-  margin-bottom: 2.5rem;
+.detail-game-section
+  .game-requirements
+  .game-requirements-left
+  .game-requirements-left-data
+  h4 {
+  margin-bottom: 2rem;
+}
+
+.detail-game-section
+  .game-requirements
+  .game-requirements-left
+  .game-requirements-left-data
+  p {
+  margin-bottom: 2rem;
+}
+
+.detail-game-section
+  .game-requirements
+  .game-requirements-left
+  .game-requirements-left-data
+  div {
+  max-width: 50%;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* ! ++++++++++ GAME-REQUIREMENTS-DATA-RIGHT ++++++++++ */
+/* ! ++++++++++ GAME-REQUIREMENTS-RIGHT-DATA ++++++++++ */
 
-.detail-game-section .game-requirements .game-requirements-data-right {
-  width: 54rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.detail-game-section
-  .game-requirements
-  .game-requirements-data-right
-  .data-wrapper {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+.detail-game-section .game-requirements .game-requirements-right .data-wrapper {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-game-section .game-requirements .game-requirements-right h3 {
+  margin-bottom: 2rem;
+}
+
+.detail-game-section .game-requirements .game-requirements-right h4 {
+  margin-bottom: 1rem;
+}
+
+.detail-game-section .game-requirements .game-requirements-right p {
+  margin-bottom: 2rem;
 }
 
 .detail-game-section
   .game-requirements
-  .game-requirements-data-right
+  .game-requirements-right
   .data-wrapper
   .data-left,
 .detail-game-section
   .game-requirements
-  .game-requirements-data-right
+  .game-requirements-right
   .data-wrapper
   .data-right {
-  width: 45%;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: flex-start;
