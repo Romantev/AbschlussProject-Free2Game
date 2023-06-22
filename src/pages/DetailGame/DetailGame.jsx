@@ -38,6 +38,7 @@ const DetailGame = () => {
           <article className="header-img">
             <img src={gameData.screenshots[0].image} alt={gameData.title} />
           </article>
+          <p>"Button nur für schnelle Navigation"</p>
           <Link to="/">
             <Button btntext="Back" />
           </Link>
