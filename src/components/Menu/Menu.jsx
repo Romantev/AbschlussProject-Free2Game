@@ -30,24 +30,24 @@ const Menu = () => {
               <CloseIcon />
             </button>
             <div className="menu-navigation">
-              <button className="menu-button">
+              <NavLink className="menu-button">
                 <div>
                   <HomeIcon />
                   <h2>Home</h2>
                 </div>
-              </button>
-              <button className="menu-button">
+              </NavLink>
+              <NavLink className="menu-button">
                 <div>
                   <GamesIcon />
                   <h2>All Games</h2>
                 </div>
-              </button>
-              <button className="menu-button">
+              </NavLink>
+              <NavLink className="menu-button">
                 <div>
                   <RecentlyAddedIcon />
                   <h2>Recenty Added</h2>
                 </div>
-              </button>
+              </NavLink>
             </div>
           </div>
           <main></main>
@@ -63,9 +63,9 @@ const Menu = () => {
               <NavLink to="/" className="menu-button">
                 <HomeIcon />
               </NavLink>
-              <button className="menu-button">
+              <NavLink to="/all-games" className="menu-button">
                 <GamesIcon />
-              </button>
+              </NavLink>
               <NavLink to="/recently-added" className="menu-button">
                 <RecentlyAddedIcon />
               </NavLink>

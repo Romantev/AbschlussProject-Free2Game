@@ -19,27 +19,27 @@
 }
 
 .card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .card-title {
-color: #fff;
-font-size: 1.7rem;
+  color: #fff;
+  font-size: 1.7rem;
 }
 
 .card-description {
-    color: var(--babyblue);
-    line-height: 2rem;
+  color: var(--babyblue);
+  line-height: 2rem;
 }
 
 .card-genre-and-platform {
-    padding: 1rem;
-    border: 1px solid var(--flamingo);
-    border-radius: 1rem;
-    color: #fff;
+  padding: 1rem;
+  border: 1px solid var(--flamingo);
+  border-radius: 1rem;
+  color: #fff;
 }
 
 .main-btn {
@@ -56,19 +56,20 @@ font-size: 1.7rem;
 }
 
 .card-img {
-    border-radius: 2rem;
+  border-radius: 2rem;
 }
 
 hr.card-line {
-    border-top: 1px solid var(--babyblue);
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    opacity: 0.4;
-    padding-bottom: 1rem;
+  border-top: 1px solid var(--babyblue);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  opacity: 0.4;
+  padding-bottom: 1rem;
 }
 
 .row {
+
     display: flex;
     gap: 1rem;
 }
@@ -90,3 +91,4 @@ hr.card-line {
 .lower-card-content .main-btn {
     margin-bottom: 2rem;
 }
+

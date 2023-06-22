@@ -7,6 +7,7 @@ const GameCardSmall = (props) => {
   return (
     <div className="card-md">
       <div className="upper-card-content">
+
       <img className="card-img" src={props.game.thumbnail} />
       <div className="card-content">
         <span className="card-title">{props.game.title} </span>
@@ -17,6 +18,7 @@ const GameCardSmall = (props) => {
         </div>
         
         <div className="lower-card-content">
+
         <Link to={`/${props.game.id}`}>
           <button className="main-btn">Read more</button>
         </Link>
@@ -34,6 +36,7 @@ const GameCardSmall = (props) => {
         </div>
         </div>
       </div>
+
   );
 };
 
