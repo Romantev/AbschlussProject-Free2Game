@@ -1,6 +1,18 @@
 .navbar-search {
-  background-color: black;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem 1rem 15rem;
+    position: fixed;
+    width: 100%;
 }
+
+input {
+    padding: 0rem 4rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    background-color: var(--navydesat);
+}
+
+
