@@ -1,0 +1,11 @@
+.button button {
+  background-color: var(--flamingo);
+  padding: 1rem 2rem;
+  width: max-content;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 900;
+}
