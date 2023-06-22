@@ -1,24 +1,19 @@
 import { useEffect, useState } from "react";
 import "./DetailGame.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Windows from "../../assets/Platforms/Windows.svg";
 import Browser from "../../assets/Platforms/Browser.svg";
+import Button from "../../components/Button/Button.jsx";
 
 const DetailGame = () => {
   const params = useParams();
   const [gameData, setGameData] = useState();
-  const [icon, setIcon] = useState();
 
   useEffect(() => {
     fetch(`https://www.freetogame.com/api/game?id=${params.gameid}`)
       .then((res) => res.json())
       .then((data) => {
         setGameData(data);
-        if (data.platform == "Windows") {
-          setIcon(true);
-        } else {
-          setIcon(false);
-        }
       })
       .catch((err) => {
         console.log("Fehler beim Laden", err);
@@ -43,6 +38,9 @@ const DetailGame = () => {
           <article className="header-img">
             <img src={gameData.screenshots[0].image} alt={gameData.title} />
           </article>
+          <Link to="/">
+            <Button btntext="Back" />
+          </Link>
           <article className="game-details">
             <div className="game-details-left">
               <h2>{gameData.title}</h2>
@@ -54,7 +52,7 @@ const DetailGame = () => {
                 />
                 <h3>
                   Plattform : {gameData.platform}
-                  {icon ? (
+                  {gameData.platform == "Windows" ? (
                     <img
                       src={Windows}
                       alt={gameData.platform}
@@ -69,7 +67,9 @@ const DetailGame = () => {
                   )}
                 </h3>
                 <h4 className="genre">{gameData.genre}</h4>
-                <button>Play Now</button>
+                <Link to={gameData.game_url} target="_blank">
+                  <Button btntext="Play Now" />
+                </Link>
               </div>
             </div>
             <div className="game-details-right">
