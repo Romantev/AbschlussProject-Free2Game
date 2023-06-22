@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import "./GameCardSmall.css";
 
 const GameCardSmall = (props) => {
@@ -10,16 +10,14 @@ const GameCardSmall = (props) => {
         <span className="card-description">
           {props.game.short_description}{" "}
         </span>
-        <button className="main-btn">Read more</button>
+        <Link to={`/${props.game.id}`}>
+          <button className="main-btn">Read more</button>
+        </Link>
+
         <hr className="card-line" />
         <div className="row">
-          <span className="card-genre-and-platform">
-            {props.game.platform}
-          </span>
-          <span className="card-genre-and-platform">
-          {props.game.genre}
-          </span>
-
+          <span className="card-genre-and-platform">{props.game.platform}</span>
+          <span className="card-genre-and-platform">{props.game.genre}</span>
         </div>
       </div>
     </>
@@ -27,4 +25,3 @@ const GameCardSmall = (props) => {
 };
 
 export default GameCardSmall;
-

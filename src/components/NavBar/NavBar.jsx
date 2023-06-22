@@ -1,32 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import "./NavBar.css";
 import logo from "./logo.svg";
-import GameCardSmall from "../GameCardSmall/GameCardSmall";
+import { gameContext, searchInputContext } from "../../context/Context";
 
 const NavBar = () => {
-  const [games, setGames] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
-  const [searchedGames, setSearchedGames] = useState([]);
-
-  const searchGames = () => {
-    const searched = games.filter((game) =>
-      game.title.toLowerCase().includes(searchInput.toLowerCase())
-    );
-    setSearchedGames(searched);
-  };
+  const { searchInput, setSearchInput } = useContext(searchInputContext);
+  const { gameData, setGameData } = useContext(gameContext);
 
   useEffect(() => {
     fetch("https://www.freetogame.com/api/games")
       .then((response) => response.json())
       .then((data) => {
-        setGames(data);
+        setGameData(data);
       })
       .catch((err) => console.log(err));
   }, []);
-
-  useEffect(() => {
-    searchGames();
-  }, [searchInput, games]);
 
   return (
     <>
@@ -38,11 +26,6 @@ const NavBar = () => {
           onChange={(event) => setSearchInput(event.target.value)}
         />
       </div>
-      <div className="cards-container-flex">
-        {searchedGames.map((game, index) => (
-          <div className="card-md" key={index}><GameCardSmall game={game}/></div>
-        ))}
-        </div>
     </>
   );
 };
