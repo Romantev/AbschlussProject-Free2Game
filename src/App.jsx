@@ -5,6 +5,7 @@ import RecentlyAdded from "./pages/RecentlyAdded/RecentlyAdded";
 import DetailGame from "./pages/DetailGame/DetailGame";
 import { useState } from "react";
 import { gameContext, searchInputContext } from "./context/Context";
+import DropDown from "./components/DropDown/DropDown";
 
 function App() {
   const [gameData, setGameData] = useState([]);
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+    
       <searchInputContext.Provider value={{ searchInput, setSearchInput }}>
         <gameContext.Provider value={{ gameData, setGameData }}>
           <BrowserRouter>
