@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
 import "./DetailGame.css";
 import { useParams } from "react-router-dom";
+import Windows from "../../assets/Platforms/Windows.svg";
+import Browser from "../../assets/Platforms/Browser.svg";
 
 const DetailGame = () => {
   const params = useParams();
   const [gameData, setGameData] = useState();
+  const [icon, setIcon] = useState();
 
   useEffect(() => {
     fetch(`https://www.freetogame.com/api/game?id=${params.gameid}`)
       .then((res) => res.json())
       .then((data) => {
         setGameData(data);
+        if (data.platform == "Windows") {
+          setIcon(true);
+        } else {
+          setIcon(false);
+        }
       })
       .catch((err) => {
         console.log("Fehler beim Laden", err);
@@ -39,8 +47,27 @@ const DetailGame = () => {
             <div className="game-details-left">
               <h2>{gameData.title}</h2>
               <div>
-                <img src={gameData.thumbnail} alt={gameData.title} />
-                <h3>Plattform : {gameData.platform}</h3>
+                <img
+                  src={gameData.thumbnail}
+                  alt={gameData.title}
+                  className="thumbnail"
+                />
+                <h3>
+                  Plattform : {gameData.platform}
+                  {icon ? (
+                    <img
+                      src={Windows}
+                      alt={gameData.platform}
+                      className="platform-icon"
+                    />
+                  ) : (
+                    <img
+                      src={Browser}
+                      alt={gameData.platform}
+                      className="platform-icon"
+                    />
+                  )}
+                </h3>
                 <h4 className="genre">{gameData.genre}</h4>
                 <button>Play Now</button>
               </div>
@@ -78,22 +105,28 @@ const DetailGame = () => {
               <div className="game-requirements-data-right">
                 <h3>Minimum System Requirements (Windows)</h3>
                 <div className="data-wrapper">
-                  <div className="data-left">
-                    <h4>OS</h4>
-                    <p>{gameData.minimum_system_requirements.os}</p>
-                    <h4>Memory</h4>
-                    <p>{gameData.minimum_system_requirements.memory}</p>
-                    <h4>Storage</h4>
-                    <p>{gameData.minimum_system_requirements.storage}</p>
-                  </div>
-                  <div className="data-right">
-                    <h4>Processor</h4>
-                    <p>{gameData.minimum_system_requirements.processor}</p>
-                    <h4>Graphics</h4>
-                    <p>{gameData.minimum_system_requirements.graphics}</p>
-                    <h4>Additional Notes</h4>
-                    <p>Specifications may change during development</p>
-                  </div>
+                  {gameData.minimum_system_requirements ? (
+                    <>
+                      <div className="data-left">
+                        <h4>OS</h4>
+                        <p>{gameData.minimum_system_requirements.os}</p>
+                        <h4>Memory</h4>
+                        <p>{gameData.minimum_system_requirements.memory}</p>
+                        <h4>Storage</h4>
+                        <p>{gameData.minimum_system_requirements.storage}</p>
+                      </div>
+                      <div className="data-right">
+                        <h4>Processor</h4>
+                        <p>{gameData.minimum_system_requirements.processor}</p>
+                        <h4>Graphics</h4>
+                        <p>{gameData.minimum_system_requirements.graphics}</p>
+                        <h4>Additional Notes</h4>
+                        <p>Specifications may change during development</p>
+                      </div>
+                    </>
+                  ) : (
+                    <h4>Browser Game, no System Requirements needed</h4>
+                  )}
                 </div>
               </div>
             </div>
