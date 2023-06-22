@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import Menu from "../../components/Menu/Menu";
 import GameCardSmall from "../../components/GameCardSmall/GameCardSmall";
+import NavBar from "../../components/NavBar/NavBar";
 
 const RecentlyAdded = () => {
   const [gameData, setGameData] = useState([]);
@@ -18,14 +19,17 @@ const RecentlyAdded = () => {
   }, []);
 
   return (
-    <div className="super-wrapper">
-      <Menu />
-      <main className="recently-added">
-        {gameData?.map((elm, index) => {
-          return <GameCardSmall key={index} game={elm} />;
-        })}
-      </main>
-    </div>
+    <>
+      <NavBar />
+      <div className="super-wrapper">
+        <Menu />
+        <main className="cards-container-flex">
+          {gameData?.map((elm, index) => {
+            return <GameCardSmall key={index} game={elm} />;
+          })}
+        </main>
+      </div>
+    </>
   );
 };
 
