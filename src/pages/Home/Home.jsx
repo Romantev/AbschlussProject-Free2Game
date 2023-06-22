@@ -6,9 +6,16 @@ import { gameContext, searchInputContext } from "../../context/Context";
 import Menu from "../../components/Menu/Menu";
 import NavBar from "../../components/NavBar/NavBar";
 import GameCardSmall from "../../components/GameCardSmall/GameCardSmall";
+
 import SectionRecentlyAdded from "../../components/SectionRecentlyAdded/SectionRecentlyAdded";
 import SectionTop4PC from "../../components/SectionTop4PC/SectionTop4PC";
 import SectionTop4Browser from "../../components/SectionTop4Browser/SectionTop4Browser";
+
+import { useContext } from "react";
+import { gameContext, searchInputContext } from "../../context/Context";
+import GameCardMiddle from "../../components/GameCardMiddle/GameCardMiddle";
+import GameCardLarge from "../../components/GameCardLarge/GameCardLarge";
+
 
 const Home = () => {
   const { gameData, setGameData } = useContext(gameContext);
@@ -69,6 +76,7 @@ const Home = () => {
         )}
       </div>
     </div>
+
   );
 };
 

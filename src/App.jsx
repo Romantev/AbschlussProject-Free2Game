@@ -9,12 +9,14 @@ import RecentlyAdded from "./pages/RecentlyAdded/RecentlyAdded";
 import DetailGame from "./pages/DetailGame/DetailGame";
 import Allgames from "./pages/AllGames/AllGames";
 
+
 function App() {
   const [gameData, setGameData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
 
   return (
     <>
+    
       <searchInputContext.Provider value={{ searchInput, setSearchInput }}>
         <gameContext.Provider value={{ gameData, setGameData }}>
           <BrowserRouter>
