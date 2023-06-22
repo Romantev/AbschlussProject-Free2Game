@@ -11,12 +11,6 @@ import SectionRecentlyAdded from "../../components/SectionRecentlyAdded/SectionR
 import SectionTop4PC from "../../components/SectionTop4PC/SectionTop4PC";
 import SectionTop4Browser from "../../components/SectionTop4Browser/SectionTop4Browser";
 
-import { useContext } from "react";
-import { gameContext, searchInputContext } from "../../context/Context";
-import GameCardMiddle from "../../components/GameCardMiddle/GameCardMiddle";
-import GameCardLarge from "../../components/GameCardLarge/GameCardLarge";
-
-
 const Home = () => {
   const { gameData, setGameData } = useContext(gameContext);
   const { searchInput, setSearchInput } = useContext(searchInputContext);
@@ -53,30 +47,31 @@ const Home = () => {
   );
 
   return (
-    <div className="super-wrapper">
-      <Menu />
-      <div className="main-body">
-        <NavBar />
-        //* ============ Check if Searching ============ //
-        {searchInput.length > 0 ? (
-          <div className="cards-container-flex">
-            {filteredData?.map((game, index) => (
-              <div className="card-md" key={index}>
-                <GameCardSmall game={game} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          //* ============ Main Body ============ //
-          <main className="home-main">
-            <SectionRecentlyAdded />
-            <SectionTop4PC month={month} year={year} />
-            <SectionTop4Browser month={month} year={year} />
-          </main>
-        )}
+    <>
+      <NavBar />
+      <div className="super-wrapper">
+        <Menu />
+        <div className="main-body">
+          //* ============ Check if Searching ============ //
+          {searchInput.length > 0 ? (
+            <div className="cards-container-flex">
+              {filteredData?.map((game, index) => (
+                <div className="card-md" key={index}>
+                  <GameCardSmall game={game} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            //* ============ Main Body ============ //
+            <main className="home-main">
+              <SectionRecentlyAdded />
+              <SectionTop4PC month={month} year={year} />
+              <SectionTop4Browser month={month} year={year} />
+            </main>
+          )}
+        </div>
       </div>
-    </div>
-
+    </>
   );
 };
 
