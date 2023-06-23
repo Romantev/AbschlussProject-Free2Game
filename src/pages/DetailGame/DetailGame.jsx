@@ -16,18 +16,6 @@ const DetailGame = () => {
       .then((res) => res.json())
       .then((data) => {
         setGameData(data);
-        console.log(data.screenshots);
-      })
-      .catch((err) => {
-        console.log("Fehler beim Laden", err);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch("https://www.freetogame.com/api/games")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
       })
       .catch((err) => {
         console.log("Fehler beim Laden", err);

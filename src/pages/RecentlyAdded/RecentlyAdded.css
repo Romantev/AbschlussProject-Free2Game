@@ -1,4 +1,13 @@
-.recently-added {
+.super-wrapper {
+  display: flex;
+}
+
+.wrapper {
+  margin-left: 80px;
+  width: 100%;
+}
+
+.cards-container-flexadded {
   margin-left: 80px;
   height: 100vw;
   width: 100vw;

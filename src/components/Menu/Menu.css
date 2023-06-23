@@ -7,7 +7,7 @@
   background-color: var(--navydark);
   position: fixed;
   border-right: 3px solid white;
-  z-index: 10;
+  z-index: 20;
 }
 
 .menu-bar-open {
@@ -19,7 +19,7 @@
   background-color: var(--navydark);
   position: fixed;
   border-right: 3px solid white;
-  z-index: 10;
+  z-index: 20;
 }
 
 .menu-icon div {
