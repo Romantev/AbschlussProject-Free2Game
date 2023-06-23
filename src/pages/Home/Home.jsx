@@ -1,23 +1,32 @@
 import "./Home.css";
 
 import { useContext, useEffect, useState } from "react";
-import { gameContext, searchInputContext } from "../../context/Context";
+import {
+  gameContext,
+  searchInputContext,
+  headerImgContext,
+} from "../../context/Context";
 
 import Menu from "../../components/Menu/Menu";
 import NavBar from "../../components/NavBar/NavBar";
-import GameCardSmall from "../../components/GameCardSmall/GameCardSmall";
 import Header from "../../components/Header/Header";
-
 import SectionRecentlyAdded from "../../components/SectionRecentlyAdded/SectionRecentlyAdded";
 import SectionTop4PC from "../../components/SectionTop4PC/SectionTop4PC";
 import SectionTop4Browser from "../../components/SectionTop4Browser/SectionTop4Browser";
+import GameCardSmall from "../../components/GameCardSmall/GameCardSmall";
 
 const Home = () => {
   const { gameData, setGameData } = useContext(gameContext);
   const { searchInput, setSearchInput } = useContext(searchInputContext);
+  const { headerImg, setHeaderImg } = useContext(headerImgContext);
 
   const [month, setMonth] = useState();
   const [year, setYear] = useState();
+
+  //* ============ Set Header Img for Page ============ //
+  useEffect(() => {
+    setHeaderImg("home");
+  }, []);
 
   //* ============ Set Date ============ //
   useEffect(() => {
@@ -53,7 +62,7 @@ const Home = () => {
       <div className="super-wrapper">
         <Menu />
         <div className="main-body">
-          <Header />
+          <Header page={headerImg} />
           //* ============ Check if Searching ============ //
           {searchInput.length > 0 ? (
             <div className="cards-container-flex">

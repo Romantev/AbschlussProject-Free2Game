@@ -1,7 +1,8 @@
 import "./Menu.css";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { navMoveContext } from "../../context/Context";
 
 import BurgerIcon from "../../assets/svg/BurgerIcon";
 import CloseIcon from "../../assets/svg/CloseIcon";
@@ -11,21 +12,22 @@ import RecentlyAddedIcon from "../../assets/svg/RecentlyAddedIcon";
 
 const Menu = () => {
   const [menuBar, setMenuBar] = useState(false);
+  const { navBarMove, setNavBarMove } = useContext(navMoveContext);
 
   const openMenuBar = () => {
     setMenuBar(true);
-    console.log(menuBar);
+    setNavBarMove(true);
   };
 
   const closeMenuBar = () => {
     setMenuBar(false);
-    console.log(menuBar);
+    setNavBarMove(false);
   };
 
   return (
     <>
       {menuBar ? (
-        //* MenuBar open //
+        //* =========== Menu open =========== //
         <div className="super-wrapper">
           <div className="menu-bar-open">
             <button onClick={closeMenuBar} className="menu-button-close">
@@ -54,7 +56,7 @@ const Menu = () => {
           </div>
         </div>
       ) : (
-        //* MenuBar closed //
+        //* =========== Menu closed =========== //
         <div className="super-wrapper">
           <div className="menu-bar-close">
             <button onClick={openMenuBar} className="menu-button">
