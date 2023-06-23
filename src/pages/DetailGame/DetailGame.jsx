@@ -16,6 +16,7 @@ const DetailGame = () => {
       .then((res) => res.json())
       .then((data) => {
         setGameData(data);
+        console.log(data.screenshots);
       })
       .catch((err) => {
         console.log("Fehler beim Laden", err);
@@ -41,7 +42,16 @@ const DetailGame = () => {
           <Menu />
           <section className="detail-game-section">
             <article className="header-img">
-              <img src={gameData.screenshots[0].image} alt={gameData.title} />
+              <img
+                src={gameData.screenshots[0].image}
+                alt={gameData.title}
+                className="topimg"
+              />
+              <img
+                src={gameData.screenshots[0].image}
+                alt={gameData.title}
+                className="blurimg"
+              />
             </article>
             <h2 className="game-title">{gameData.title}</h2>
             <article className="game-details">
@@ -82,10 +92,14 @@ const DetailGame = () => {
             <article className="game-requirements">
               <div className="game-requirements-left">
                 <div className="game-requirements-left-image">
-                  <img
-                    src={gameData.screenshots[1].image}
-                    alt={gameData.title}
-                  />
+                  {gameData.screenshots[1].image ? (
+                    <img
+                      src={gameData.screenshots[1].image}
+                      alt={gameData.title}
+                    />
+                  ) : (
+                    <h2>Keine weiteren Bilder vorhanden</h2>
+                  )}
                 </div>
                 <div className="game-requirements-left-data">
                   <h3>Additional Information</h3>
@@ -109,10 +123,14 @@ const DetailGame = () => {
               </div>
               <div className="game-requirements-right">
                 <div className="game-requirements-right-image">
-                  <img
-                    src={gameData.screenshots[2].image}
-                    alt={gameData.title}
-                  />
+                  {gameData.screenshots[2].image ? (
+                    <img
+                      src={gameData.screenshots[2].image}
+                      alt={gameData.title}
+                    />
+                  ) : (
+                    <h2>Keine weiteren Bilder vorhanden</h2>
+                  )}
                 </div>
                 <div className="game-requirements-right-data">
                   <h3>Minimum System Requirements (Windows)</h3>
@@ -148,7 +166,7 @@ const DetailGame = () => {
           </section>
         </>
       ) : (
-        <h2>Lädt</h2>
+        <h2>Daten werden geladen</h2>
       )}
     </div>
   );
