@@ -1,5 +1,5 @@
-import "./DropDown.css";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import './DropDown.css';
 
 const DropDown = () => {
   const [dropdown, setDropDown] = useState(false);
@@ -12,14 +12,20 @@ const DropDown = () => {
 
   const toggleDropDown = () => {
     setDropDown(!dropdown);
+    setDropDown1(false);
+    setDropDown2(false);
   };
 
   const toggleDropDown1 = () => {
     setDropDown1(!dropdown1);
+    setDropDown2(false);
+    setDropDown(false);
   };
 
   const toggleDropDown2 = () => {
     setDropDown2(!dropdown2);
+    setDropDown(false);
+    setDropDown1(false);
   };
 
   useEffect(() => {
@@ -65,99 +71,86 @@ const DropDown = () => {
   };
 
   return (
-    <div className="dropdown">
+    <div className='dropdown'>
       <div className="btns">
-        <button onClick={toggleDropDown} type="button">
-          Platform{" "}
-          <img
-            className="vector"
-            src="./src/assets/Dropdown/Vector 6vector.png"
-            alt="vector"
-          />
+        <button onClick={toggleDropDown} type='button'>
+          Platform <img className="vector" src="./src/assets/Dropdown/Vector 6vector.png" alt="vector" />
         </button>
         {dropdown && (
           <div>
             {platforms.map((platform) => (
-              <div key={platform}>
+              <div className='checked' key={platform}>
                 <input
                   type="checkbox"
                   value={platform}
                   onChange={(e) => console.log(e.target.value)}
+                  id='checkbox1'
                 />
-                <label htmlFor="Text">{platform}</label>
+                <label htmlFor='Text'>{platform}</label>
               </div>
             ))}
           </div>
-        )}
+        ):null}
       </div>
       <div className="btns">
-        <button onClick={toggleDropDown1} type="button">
-          Genre/Tag{" "}
-          <img
-            className="vector"
-            src="./src/assets/Dropdown/Vector 6vector.png"
-            alt="vector"
-          />
+        <button onClick={toggleDropDown1} type='button'>
+          Genre/Tag <img className="vector" src="./src/assets/Dropdown/Vector 6vector.png" alt="vector" />
         </button>
         {dropdown1 && (
-          <div>
+          <div className={dropdown1?'':'btns-none'}>
             {genres.map((genre) => (
-              <div key={genre}>
+              <div className='checked' key={genre}>
                 <input
                   type="checkbox"
                   value={genre}
                   onChange={(e) => console.log(e.target.value)}
+                  id='checkbox2'
                 />
-                <label htmlFor="Text">{genre}</label>
+                <label htmlFor='Text'>{genre}</label>
               </div>
             ))}
           </div>
         )}
       </div>
       <div className="btns">
-        <button onClick={toggleDropDown2} type="button">
-          Sort By{" "}
-          <img
-            className="vector"
-            src="./src/assets/Dropdown/Vector 6vector.png"
-            alt="vector"
-          />
+        <button onClick={toggleDropDown2} type='button' >
+          Sort By <img className="vector" src="./src/assets/Dropdown/Vector 6vector.png" alt="vector" />
         </button>
         {dropdown2 && (
-          <div>
-            <div>
+          <div className={dropdown2?'':'btns-none'}>
+            <div className='checked'>
               <input
-                type="checkbox"
-                value="relevance"
-                checked={sortBy.includes("relevance")}
-                onChange={() => handleSortBy("relevance")}
+                type='checkbox'
+                value='relevance'
+                checked={sortBy.includes('relevance')}
+                onChange={() => handleSortBy('relevance')}
               />
               <label htmlFor="relevance">Relevance</label>
             </div>
-            <div>
+            <div className='checkbox'>
               <input
-                type="checkbox"
-                value="alphabetical"
-                checked={sortBy.includes("alphabetical")}
-                onChange={() => handleSortBy("alphabetical")}
+                type='checkbox'
+                value='alphabetical'
+                checked={sortBy.includes('alphabetical')}
+                onChange={() => handleSortBy('alphabetical')}
               />
               <label htmlFor="alphabetical">Alphabetical</label>
             </div>
-            <div>
+            <div className='checkbox'>
               <input
-                type="checkbox"
-                value="popularity"
-                checked={sortBy.includes("popularity")}
-                onChange={() => handleSortBy("popularity")}
+                type='checkbox'
+                value='popularity'
+                checked={sortBy.includes('popularity')}
+                onChange={() => handleSortBy('popularity')}
               />
               <label htmlFor="popularity">Popularity</label>
             </div>
-            <div>
+            <div className='checkbox'>
               <input
-                type="checkbox"
-                value="release-date"
-                checked={sortBy.includes("release-date")}
-                onChange={() => handleSortBy("release-date")}
+                type='checkbox'
+                value='release-date'
+                checked={sortBy.includes('release-date')}
+                onChange={() => handleSortBy('release-date')}
               />
               <label htmlFor="release-date">Release Date</label>
             </div>

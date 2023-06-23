@@ -1,7 +1,60 @@
+@font-face {
+    font-family: Oswald;
+    src: url("/src/assets/Oswald/Oswald-VariableFont_wght.ttf");
+}
+
+:root {
+    --flamingo: #FF4654;
+    --navydark: #040F14;
+    --navylight: #102130;
+    --navydesat: #375470;
+    --babyblue: #AFC7DF;
+    --white: #FFFFFF;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
 .dropdown{
     display: flex;
     justify-content: center;
+    
 }
 .btns{
     margin: 15px;
+    background-color: aqua;
+    border-radius: 0.75rem;
+    gap: 12px;
+    
 }
+
+.btns-none{
+    display: none;
+}
+
+.btns button{
+    background-color: var(--flamingo);
+    border: none;
+    border-radius: 0.75rem;
+    color: var(--white);
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    width: 285px;
+    height: 50px;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vector{
+    transform: rotate(180deg);
+}
+
