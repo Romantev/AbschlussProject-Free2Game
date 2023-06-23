@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
 import "./SectionTop4PC.css";
-import GameCardSmall from "../GameCardSmall/GameCardSmall";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import GameCardLarge from "../GameCardLarge/GameCardLarge";
+import GameCardMiddle from "../GameCardMiddle/GameCardMiddle";
 import BtnShowMore from "../BtnShowMore/BtnShowMore";
 
 const SectionTop4PC = (props) => {
@@ -27,10 +28,10 @@ const SectionTop4PC = (props) => {
             Top 4 Games for PC in {props.month} {props.year}
           </h2>
           <article className="article-recentlyadded">
-            <GameCardSmall game={top4PC[0]} />
-            <GameCardSmall game={top4PC[1]} />
-            <GameCardSmall game={top4PC[2]} />
-            <GameCardSmall game={top4PC[3]} />
+            <GameCardLarge game={top4PC[0]} />
+            <GameCardMiddle game={top4PC[1]} />
+            <GameCardMiddle game={top4PC[2]} />
+            <GameCardMiddle game={top4PC[3]} />
           </article>
           <NavLink to="/all-games">
             <BtnShowMore />

@@ -6,6 +6,7 @@ import { gameContext, searchInputContext } from "../../context/Context";
 import GameCardSmall from "../../components/GameCardSmall/GameCardSmall";
 import Menu from "../../components/Menu/Menu";
 import NavBar from "../../components/NavBar/NavBar";
+import DropDown from "../../components/DropDown/DropDown";
 
 const AllGames = () => {
   const { gameData, setGameData } = useContext(gameContext);
@@ -21,6 +22,7 @@ const AllGames = () => {
       <NavBar />
       <div className="super-wrapper">
         <Menu />
+        <DropDown />
         <div className="wrapper">
           <main className="main-allgames">
             {filteredData?.map((elm, index) => {
