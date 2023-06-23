@@ -3,18 +3,30 @@
 .wrapper {
   width: 100vw;
   min-height: 100vh;
-  padding-top: 10rem;
-  padding-left: 10rem;
-  padding-right: 2.5rem;
   background-color: var(--navydark);
   color: white;
 }
 
-/* ! ++++++++++ DETAIL-GAME-SECTION ++++++++++ */
+/* ! ++++++++++ DETAIL-GAME-SECTION +++++++++++ */
 
 .detail-game-section {
   max-width: 140rem;
   margin: 0 auto;
+  padding-left: 10rem;
+  padding-top: 10rem;
+}
+
+.detail-game-section h2 {
+  font-size: 4.8rem;
+}
+.detail-game-section h3 {
+  font-size: 2.4rem;
+}
+.detail-game-section h4 {
+  font-size: 1.8rem;
+}
+.detail-game-section p {
+  font-size: 1.6rem;
 }
 
 /* ! ++++++++++ DETAIL-GAME-SECTION-IMG ++++++++++ */
@@ -22,26 +34,42 @@
 .detail-game-section .header-img {
   width: 100%;
   margin-bottom: 5rem;
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.detail-game-section .header-img img {
-  width: 140rem;
-  height: 50rem;
-  border-radius: 10px;
+.detail-game-section .header-img .topimg {
+  width: 100%;
+  height: 65rem;
+  border-radius: 1rem;
   margin: 0 auto;
   object-fit: cover;
+  z-index: 5;
+}
+
+.detail-game-section .header-img .blurimg {
+  position: absolute;
+  width: 75%;
+  top: 0;
+  filter: blur(60px) brightness(1.5);
+  z-index: 0;
+  opacity: 0.5;
 }
 
 /* ! ++++++++++ GAME-DETAILS ++++++++++ */
 
+.detail-game-section .game-title {
+  margin-left: 5%;
+  margin-bottom: 5rem;
+}
+
 .detail-game-section .game-details {
   max-width: 90%;
-  min-height: 60rem;
-  margin: 0 auto;
+  min-height: 45rem;
+  margin: 0 auto 10rem auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -60,9 +88,9 @@
   margin-bottom: 5rem;
 }
 
-.detail-game-section .game-details .game-details-left img {
+.detail-game-section .game-details .game-details-left .thumbnail {
   width: 49rem;
-  height: 28rem;
+  height: 25rem;
   border-radius: 1rem;
   object-fit: cover;
   margin-bottom: 2rem;
@@ -70,10 +98,32 @@
 
 .detail-game-section .game-details .game-details-left h3 {
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .detail-game-section .game-details .game-details-left h4 {
   margin-bottom: 2rem;
+}
+
+.detail-game-section .game-details .game-details-left .platform-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 1rem;
+  object-fit: contain;
+}
+
+.detail-game-section .game-details .game-details-left .genre {
+  width: 12rem;
+  height: 4rem;
+  margin-bottom: 4rem;
+  background-color: var(--navydark);
+  border: 2px solid var(--flamingo);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ! ++++++++++ GAME-DETAILS-RIGHT ++++++++++ */
@@ -87,105 +137,126 @@
   max-width: 56rem;
   white-space: break-spaces;
   text-align: justify;
+  font-family: "Light";
 }
 
 /* ! ++++++++++ GAME-REQUIREMENTS ++++++++++ */
 
 .detail-game-section .game-requirements {
   width: 100%;
-  min-height: 60rem;
+  height: 75rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  flex-direction: column;
-}
-
-.detail-game-section .game-requirements h3 {
-  margin-bottom: 3.4rem;
-}
-
-.detail-game-section .game-requirements h4 {
-  margin-bottom: 1.2rem;
-}
-
-.detail-game-section .game-requirements p {
-  margin-bottom: 2.6rem;
+  gap: 5rem;
 }
 
 /* ! ++++++++++ GAME-REQUIREMENTS-IMAGES ++++++++++ */
 
-.detail-game-section .game-requirements .game-requirements-images {
-  width: 100%;
-  height: 45rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.detail-game-section .game-requirements .game-requirements-images img {
-  width: 59rem;
+.detail-game-section .game-requirements .game-requirements-left img,
+.detail-game-section .game-requirements .game-requirements-right img {
+  max-width: 100%;
   height: 35rem;
+  margin-bottom: 5rem;
   object-fit: cover;
   border-radius: 1rem;
 }
 
 /* ! ++++++++++ GAME-REQUIREMENTS-DATA ++++++++++ */
 
-.detail-game-section .game-requirements .game-requirements-data {
-  width: 100%;
-  height: 50rem;
+.detail-game-section .game-requirements .game-requirements-left,
+.detail-game-section .game-requirements .game-requirements-right {
+  width: 50%;
+  height: 100%;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-}
-
-/* ! ++++++++++ GAME-REQUIREMENTS-DATA-LEFT ++++++++++ */
-
-.detail-game-section .game-requirements .game-requirements-data-left {
-  width: 44rem;
-}
-
-.detail-game-section .game-requirements .game-requirements-data-left div {
-  width: 29rem;
-  height: 2.5rem;
-  margin-bottom: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* ! ++++++++++ GAME-REQUIREMENTS-DATA-RIGHT ++++++++++ */
-
-.detail-game-section .game-requirements .game-requirements-data-right {
-  width: 54rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
 .detail-game-section
   .game-requirements
-  .game-requirements-data-right
-  .data-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .game-requirements-left
+  .game-requirements-left-data,
+.detail-game-section
+  .game-requirements
+  .game-requirements-right
+  .game-requirements-right-data {
+  padding-left: 2rem;
   width: 100%;
-  height: 100%;
+}
+
+/* ! ++++++++++ GAME-REQUIREMENTS-LEFT-DATA ++++++++++ */
+
+.detail-game-section
+  .game-requirements
+  .game-requirements-left
+  .game-requirements-left-data
+  h3 {
+  margin-bottom: 2rem;
 }
 
 .detail-game-section
   .game-requirements
-  .game-requirements-data-right
+  .game-requirements-left
+  .game-requirements-left-data
+  h4 {
+  margin-bottom: 2rem;
+}
+
+.detail-game-section
+  .game-requirements
+  .game-requirements-left
+  .game-requirements-left-data
+  p {
+  margin-bottom: 2rem;
+}
+
+.detail-game-section
+  .game-requirements
+  .game-requirements-left
+  .game-requirements-left-data
+  div {
+  max-width: 50%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ! ++++++++++ GAME-REQUIREMENTS-RIGHT-DATA ++++++++++ */
+
+.detail-game-section .game-requirements .game-requirements-right .data-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-game-section .game-requirements .game-requirements-right h3 {
+  margin-bottom: 2rem;
+}
+
+.detail-game-section .game-requirements .game-requirements-right h4 {
+  margin-bottom: 1rem;
+}
+
+.detail-game-section .game-requirements .game-requirements-right p {
+  margin-bottom: 2rem;
+}
+
+.detail-game-section
+  .game-requirements
+  .game-requirements-right
   .data-wrapper
   .data-left,
 .detail-game-section
   .game-requirements
-  .game-requirements-data-right
+  .game-requirements-right
   .data-wrapper
   .data-right {
-  width: 45%;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: flex-start;

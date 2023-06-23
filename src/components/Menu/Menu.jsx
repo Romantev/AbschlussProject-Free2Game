@@ -1,7 +1,8 @@
 import "./Menu.css";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { navMoveContext } from "../../context/Context";
 
 import BurgerIcon from "../../assets/svg/BurgerIcon";
 import CloseIcon from "../../assets/svg/CloseIcon";
@@ -11,49 +12,51 @@ import RecentlyAddedIcon from "../../assets/svg/RecentlyAddedIcon";
 
 const Menu = () => {
   const [menuBar, setMenuBar] = useState(false);
+  const { navBarMove, setNavBarMove } = useContext(navMoveContext);
 
   const openMenuBar = () => {
     setMenuBar(true);
+    setNavBarMove(true);
   };
 
   const closeMenuBar = () => {
     setMenuBar(false);
+    setNavBarMove(false);
   };
 
   return (
     <>
       {menuBar ? (
-        // MenuBar open //
+        //* =========== Menu open =========== //
         <div className="super-wrapper">
           <div className="menu-bar-open">
             <button onClick={closeMenuBar} className="menu-button-close">
               <CloseIcon />
             </button>
             <div className="menu-navigation">
-              <button className="menu-button">
+              <NavLink to="/" className="menu-button">
                 <div>
                   <HomeIcon />
                   <h2>Home</h2>
                 </div>
-              </button>
-              <button className="menu-button">
+              </NavLink>
+              <NavLink to="/all-games" className="menu-button">
                 <div>
                   <GamesIcon />
                   <h2>All Games</h2>
                 </div>
-              </button>
-              <button className="menu-button">
+              </NavLink>
+              <NavLink to="/recently-added" className="menu-button">
                 <div>
                   <RecentlyAddedIcon />
                   <h2>Recenty Added</h2>
                 </div>
-              </button>
+              </NavLink>
             </div>
           </div>
-          <main></main>
         </div>
       ) : (
-        // MenuBar closed //
+        //* =========== Menu closed =========== //
         <div className="super-wrapper">
           <div className="menu-bar-close">
             <button onClick={openMenuBar} className="menu-button">
@@ -63,9 +66,9 @@ const Menu = () => {
               <NavLink to="/" className="menu-button">
                 <HomeIcon />
               </NavLink>
-              <button className="menu-button">
+              <NavLink to="/all-games" className="menu-button">
                 <GamesIcon />
-              </button>
+              </NavLink>
               <NavLink to="/recently-added" className="menu-button">
                 <RecentlyAddedIcon />
               </NavLink>

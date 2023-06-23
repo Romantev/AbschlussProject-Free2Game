@@ -1,0 +1,10 @@
+.btn-showmore {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ff4654;
+  border: none;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  align-self: flex-end;
+}
