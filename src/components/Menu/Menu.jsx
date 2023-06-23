@@ -32,19 +32,19 @@ const Menu = () => {
               <CloseIcon />
             </button>
             <div className="menu-navigation">
-              <NavLink className="menu-button">
+              <NavLink to="/" className="menu-button">
                 <div>
                   <HomeIcon />
                   <h2>Home</h2>
                 </div>
               </NavLink>
-              <NavLink className="menu-button">
+              <NavLink to="/all-games" className="menu-button">
                 <div>
                   <GamesIcon />
                   <h2>All Games</h2>
                 </div>
               </NavLink>
-              <NavLink className="menu-button">
+              <NavLink to="/recently-added" className="menu-button">
                 <div>
                   <RecentlyAddedIcon />
                   <h2>Recenty Added</h2>
