@@ -1,0 +1,27 @@
+.header-home {
+  height: 60vh;
+  width: 100vw;
+}
+
+.header-img {
+  background-image: url(../../assets/Header/header-allgames.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.header-title {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+}
+
+.header-title h1 {
+  color: white;
+  font-size: 3.5rem;
+  width: 50%;
+  line-height: 4rem;
+}

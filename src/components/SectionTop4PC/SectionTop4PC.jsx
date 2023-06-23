@@ -13,7 +13,9 @@ const SectionTop4PC = (props) => {
       `https://www.freetogame.com/api/games?&platform=pc&sort-by=popularity`
     )
       .then((response) => response.json())
-      .then((data) => setTop4Pc(data))
+      .then((data) => {
+        setTop4Pc(data);
+      })
       .catch((error) => console.log("Fehlermeldung: ", error));
   }, []);
 

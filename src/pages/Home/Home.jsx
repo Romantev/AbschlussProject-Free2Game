@@ -6,6 +6,7 @@ import { gameContext, searchInputContext } from "../../context/Context";
 import Menu from "../../components/Menu/Menu";
 import NavBar from "../../components/NavBar/NavBar";
 import GameCardSmall from "../../components/GameCardSmall/GameCardSmall";
+import Header from "../../components/Header/Header";
 
 import SectionRecentlyAdded from "../../components/SectionRecentlyAdded/SectionRecentlyAdded";
 import SectionTop4PC from "../../components/SectionTop4PC/SectionTop4PC";
@@ -52,6 +53,7 @@ const Home = () => {
       <div className="super-wrapper">
         <Menu />
         <div className="main-body">
+          <Header />
           //* ============ Check if Searching ============ //
           {searchInput.length > 0 ? (
             <div className="cards-container-flex">
