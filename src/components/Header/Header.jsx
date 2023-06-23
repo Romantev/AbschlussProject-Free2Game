@@ -25,6 +25,7 @@ const Header = (props) => {
               ? "RECENTLY ADDED"
               : null}
           </h1>
+
         </div>
       </div>
     </div>
