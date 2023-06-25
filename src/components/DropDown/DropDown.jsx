@@ -1,181 +1,295 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
+import Arrow from "../../assets/Dropdown/Vector 6vector.png";
 import "./DropDown.css";
 
 const DropDown = () => {
-  const [dropdown, setDropDown] = useState(false);
-  const [dropdown1, setDropDown1] = useState(false);
-  const [dropdown2, setDropDown2] = useState(false);
-  const [data, setData] = useState([]);
-  const [platforms, setPlatforms] = useState([]);
-  const [genres, setGenres] = useState([]);
-  const [sortBy, setSortBy] = useState([]);
+  const [dropDown1, setDropDown1] = useState(false);
+  const [dropDown2, setDropDown2] = useState(false);
+  const [dropDown3, setDropDown3] = useState(false);
+  const [selectedPlatfrom, setSelectedPlatfrom] = useState("");
+  const [selectedGenre, setSelectedGenre] = useState("");
+  const [selectedSort, setSelectedSort] = useState("");
 
-  const toggleDropDown = () => {
-    setDropDown(true);
+  const dropDownFunction1 = () => {
+    setDropDown1(!dropDown1);
+    setDropDown2(false);
+    setDropDown3(false);
+  };
+  const dropDownFunction2 = () => {
+    setDropDown1(false);
+    setDropDown2(!dropDown2);
+    setDropDown3(false);
+  };
+  const dropDownFunction3 = () => {
     setDropDown1(false);
     setDropDown2(false);
-    console.log({ dropdown }, { dropdown1 }, { dropdown2 });
+    setDropDown3(!dropDown3);
   };
 
-  const toggleDropDown1 = () => {
-    setDropDown(false);
-    setDropDown1(true);
-    setDropDown2(false);
-    console.log({ dropdown }, { dropdown1 }, { dropdown2 });
+  const handlePlatformChange = (e) => {
+    const { value } = e.target;
+    setSelectedPlatfrom(value);
+    console.log(value);
   };
-
-  const toggleDropDown2 = () => {
-    setDropDown(false);
-    setDropDown1(false);
-    setDropDown2(true);
-    console.log({ dropdown }, { dropdown1 }, { dropdown2 });
+  const handleGenreChange = (e) => {
+    const { value } = e.target;
+    setSelectedGenre(value);
+    console.log(value);
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch("https://www.freetogame.com/api/games");
-      const jsonData = await response.json();
-      setData(jsonData);
-
-      const platformSet = new Set();
-      const genreSet = new Set();
-
-      jsonData.forEach((game) => {
-        if (game.platform) {
-          game.platform.split(",").forEach((platform) => {
-            platformSet.add(platform.trim());
-          });
-        }
-
-        if (game.genre) {
-          game.genre.split(",").forEach((genre) => {
-            genreSet.add(genre.trim());
-          });
-        }
-      });
-
-      setPlatforms(Array.from(platformSet));
-      setGenres(Array.from(genreSet));
-    } catch (error) {
-      console.log("Error fetching data:", error);
-    }
-  };
-
-  const handleSortBy = (value) => {
-    if (sortBy.includes(value)) {
-      setSortBy(sortBy.filter((option) => option !== value));
-    } else {
-      setSortBy([...sortBy, value]);
-    }
+  const handleSortChange = (e) => {
+    const { value } = e.target;
+    setSelectedSort(value);
+    console.log(value);
   };
 
   return (
-    <div className="dropdown">
-      <div className="btns">
-        <button onClick={toggleDropDown} type="button">
-          Platform
-          <img
-            className="vector"
-            src="./src/assets/Dropdown/Vector 6vector.png"
-            alt="vector"
-          />
+    <section className="dropdown-section">
+      <article className="dropdown-1">
+        <h2>Platform</h2>
+        <button onClick={dropDownFunction1}>
+          {dropDown1 ? "Close" : "Open"}
+          <img src={Arrow} alt="Arrow" className="arrow" />
         </button>
-        {dropdown && (
-          <div className={dropdown ? "" : "btns-none"}>
-            {platforms.map((platform) => (
-              <div className="checked" key={platform}>
+        <div className={dropDown1 ? "btn-show" : "btn-none"}>
+          <div>
+            <form>
+              <div>
                 <input
                   type="checkbox"
-                  value={platform}
-                  onChange={(e) => console.log(e.target.value)}
-                  id="checkbox1"
+                  name="pc"
+                  value="pc"
+                  checked={selectedPlatfrom === "pc"}
+                  onChange={handlePlatformChange}
                 />
-                <label htmlFor="Text">{platform}</label>
+                <label htmlFor="pc">PC</label>
               </div>
-            ))}
-          </div>
-        )}
-      </div>
-      <div className="btns">
-        <button onClick={toggleDropDown1} type="button">
-          Genre/Tag
-          <img
-            className="vector"
-            src="./src/assets/Dropdown/Vector 6vector.png"
-            alt="vector"
-          />
-        </button>
-        {dropdown1 && (
-          <div className={dropdown1 ? "" : "btns-none"}>
-            {genres.map((genre) => (
-              <div className="checked" key={genre}>
+              <div>
                 <input
                   type="checkbox"
-                  value={genre}
-                  onChange={(e) => console.log(e.target.value)}
-                  id="checkbox2"
+                  name="browser"
+                  value="browser"
+                  checked={selectedPlatfrom === "browser"}
+                  onChange={handlePlatformChange}
                 />
-                <label htmlFor="Text">{genre}</label>
+                <label htmlFor="browser">Browser</label>
               </div>
-            ))}
+            </form>
           </div>
-        )}
-      </div>
-      <div className="btns">
-        <button onClick={toggleDropDown2} type="button">
-          Sort By
-          <img
-            className="vector"
-            src="./src/assets/Dropdown/Vector 6vector.png"
-            alt="vector"
-          />
+        </div>
+      </article>
+      <article className="dropdown-2">
+        <h2>Dropdown 2</h2>
+        <button onClick={dropDownFunction2}>
+          {dropDown2 ? "Close" : "Open"}
+          <img src={Arrow} alt="Arrow" className="arrow" />
         </button>
-        {dropdown2 && (
-          <div className={dropdown2 ? "" : "btns-none"}>
-            <div className="checked">
+        <div className={dropDown2 ? "btn-show" : "btn-none"}>
+          <form>
+            <div>
               <input
                 type="checkbox"
+                name="shooter"
+                value="shooter"
+                checked={selectedGenre === "shooter"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="shooter">Shooter</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="mmoarpg"
+                value="mmoarpg"
+                checked={selectedGenre === "mmoarpg"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="mmoarpg">MMOARPG</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="arpg"
+                value="arpg"
+                checked={selectedGenre === "arpg"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="arpg">ARPG</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="strategy"
+                value="strategy"
+                checked={selectedGenre === "strategy"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="strategy">Strategy</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="mmorpg"
+                value="mmorpg"
+                checked={selectedGenre === "mmorpg"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="mmorpg">MMORPG</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="fighting"
+                value="fighting"
+                checked={selectedGenre === "fighting"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="fighting">Fighting</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="action-rpg"
+                value="action-rpg"
+                checked={selectedGenre === "action-rpg"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="action-rpg">Action-RPG</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="battleroyale"
+                value="battleroyale"
+                checked={selectedGenre === "battleroyale"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="battleroyale">Battle-Royale</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="moba"
+                value="moba"
+                checked={selectedGenre === "moba"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="moba">MOBA</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="sports"
+                value="sports"
+                checked={selectedGenre === "sports"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="sports">Sports</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="racing"
+                value="racing"
+                checked={selectedGenre === "racing"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="racing">Racing</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="cardgame"
+                value="cardgame"
+                checked={selectedGenre === "cardgame"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="cardgame">Card-Game</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="mmo"
+                value="mmo"
+                checked={selectedGenre === "mmo"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="mmo">MMO</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="social"
+                value="social"
+                checked={selectedGenre === "social"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="social">Social</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="fantasy"
+                value="fantasy"
+                checked={selectedGenre === "fantasy"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="fantasy">Fantasy</label>
+            </div>
+          </form>
+        </div>
+      </article>
+      <article className="dropdown-3">
+        <h2>Dropdown 3</h2>
+        <button onClick={dropDownFunction3}>
+          {dropDown3 ? "Close" : "Open"}
+          <img src={Arrow} alt="Arrow" className="arrow" />
+        </button>
+        <div className={dropDown3 ? "btn-show" : "btn-none"}>
+          <form>
+            <div>
+              <input
+                type="checkbox"
+                name="relevance"
                 value="relevance"
-                checked={sortBy.includes("relevance")}
-                onChange={() => handleSortBy("relevance")}
+                checked={selectedSort === "relevance"}
+                onChange={handleSortChange}
               />
               <label htmlFor="relevance">Relevance</label>
             </div>
-            <div className="checkbox">
+            <div>
               <input
                 type="checkbox"
+                name="alphabetical"
                 value="alphabetical"
-                checked={sortBy.includes("alphabetical")}
-                onChange={() => handleSortBy("alphabetical")}
+                checked={selectedSort === "Alphabetical"}
+                onChange={handleSortChange}
               />
               <label htmlFor="alphabetical">Alphabetical</label>
             </div>
-            <div className="checkbox">
+            <div>
               <input
                 type="checkbox"
+                name="popularity"
                 value="popularity"
-                checked={sortBy.includes("popularity")}
-                onChange={() => handleSortBy("popularity")}
+                checked={selectedSort === "Popularity"}
+                onChange={handleSortChange}
               />
               <label htmlFor="popularity">Popularity</label>
             </div>
-            <div className="checkbox">
+            <div>
               <input
                 type="checkbox"
-                value="release-date"
-                checked={sortBy.includes("release-date")}
-                onChange={() => handleSortBy("release-date")}
+                name="releasedate"
+                value="releasedate"
+                checked={selectedSort === "releasedate"}
+                onChange={handleSortChange}
               />
-              <label htmlFor="release-date">Release Date</label>
+              <label htmlFor="releasedate">Releasedate</label>
             </div>
-          </div>
-        )}
-      </div>
-    </div>
+          </form>
+        </div>
+      </article>
+    </section>
   );
 };
 
