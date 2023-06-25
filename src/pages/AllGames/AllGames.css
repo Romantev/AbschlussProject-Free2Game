@@ -3,14 +3,8 @@
   flex-direction: column;
 }
 
-/* .main-allgames {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-} */
-
 .main-allgames {
-  max-width: 130rem;
+  max-width: 140rem;
   margin: 0 auto;
   display: flex;
   align-items: center;

@@ -30,6 +30,7 @@ label {
   max-width: 140rem;
   height: 25rem;
   margin: 0 auto;
+  padding-top: 2rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-around;

@@ -45,7 +45,6 @@ const DropDown = () => {
   return (
     <section className="dropdown-section">
       <article className="dropdown-1">
-        <h2>Platform</h2>
         <button onClick={dropDownFunction1}>
           {dropDown1 ? "Close" : "Open"}
           <img src={Arrow} alt="Arrow" className="arrow" />
@@ -78,7 +77,6 @@ const DropDown = () => {
         </div>
       </article>
       <article className="dropdown-2">
-        <h2>Dropdown 2</h2>
         <button onClick={dropDownFunction2}>
           {dropDown2 ? "Close" : "Open"}
           <img src={Arrow} alt="Arrow" className="arrow" />
@@ -239,7 +237,6 @@ const DropDown = () => {
         </div>
       </article>
       <article className="dropdown-3">
-        <h2>Dropdown 3</h2>
         <button onClick={dropDownFunction3}>
           {dropDown3 ? "Close" : "Open"}
           <img src={Arrow} alt="Arrow" className="arrow" />
@@ -261,7 +258,7 @@ const DropDown = () => {
                 type="checkbox"
                 name="alphabetical"
                 value="alphabetical"
-                checked={selectedSort === "Alphabetical"}
+                checked={selectedSort === "alphabetical"}
                 onChange={handleSortChange}
               />
               <label htmlFor="alphabetical">Alphabetical</label>
@@ -271,7 +268,7 @@ const DropDown = () => {
                 type="checkbox"
                 name="popularity"
                 value="popularity"
-                checked={selectedSort === "Popularity"}
+                checked={selectedSort === "popularity"}
                 onChange={handleSortChange}
               />
               <label htmlFor="popularity">Popularity</label>
