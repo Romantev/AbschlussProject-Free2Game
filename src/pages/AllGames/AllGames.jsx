@@ -1,12 +1,11 @@
+import { useContext } from "react";
 import "./AllGames.css";
-
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   gameContext,
   searchInputContext,
   headerImgContext,
 } from "../../context/Context";
-
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
 import NavBar from "../../components/NavBar/NavBar";

@@ -1,17 +1,14 @@
-
-.super-wrapper {
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
 }
 
 .main-allgames {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
+  max-width: 140rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
 }
-
