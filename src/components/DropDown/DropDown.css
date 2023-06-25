@@ -27,8 +27,9 @@ label {
 }
 
 .dropdown-section {
-  width: 100vw;
+  max-width: 140rem;
   height: 25rem;
+  margin: 0 auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
@@ -41,6 +42,7 @@ label {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 5rem;
 }
 
 .dropdown-section .btn-show {
