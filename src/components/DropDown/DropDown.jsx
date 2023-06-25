@@ -11,21 +11,24 @@ const DropDown = () => {
   const [sortBy, setSortBy] = useState([]);
 
   const toggleDropDown = () => {
-    setDropDown(!dropdown);
+    setDropDown(true);
     setDropDown1(false);
     setDropDown2(false);
+    console.log({ dropdown }, { dropdown1 }, { dropdown2 });
   };
 
   const toggleDropDown1 = () => {
-    setDropDown1(!dropdown1);
-    setDropDown2(false);
     setDropDown(false);
+    setDropDown1(true);
+    setDropDown2(false);
+    console.log({ dropdown }, { dropdown1 }, { dropdown2 });
   };
 
   const toggleDropDown2 = () => {
-    setDropDown2(!dropdown2);
     setDropDown(false);
     setDropDown1(false);
+    setDropDown2(true);
+    console.log({ dropdown }, { dropdown1 }, { dropdown2 });
   };
 
   useEffect(() => {
@@ -74,7 +77,7 @@ const DropDown = () => {
     <div className="dropdown">
       <div className="btns">
         <button onClick={toggleDropDown} type="button">
-          Platform{" "}
+          Platform
           <img
             className="vector"
             src="./src/assets/Dropdown/Vector 6vector.png"
@@ -82,7 +85,7 @@ const DropDown = () => {
           />
         </button>
         {dropdown && (
-          <div>
+          <div className={dropdown ? "" : "btns-none"}>
             {platforms.map((platform) => (
               <div className="checked" key={platform}>
                 <input
@@ -99,7 +102,7 @@ const DropDown = () => {
       </div>
       <div className="btns">
         <button onClick={toggleDropDown1} type="button">
-          Genre/Tag{" "}
+          Genre/Tag
           <img
             className="vector"
             src="./src/assets/Dropdown/Vector 6vector.png"
@@ -124,7 +127,7 @@ const DropDown = () => {
       </div>
       <div className="btns">
         <button onClick={toggleDropDown2} type="button">
-          Sort By{" "}
+          Sort By
           <img
             className="vector"
             src="./src/assets/Dropdown/Vector 6vector.png"
