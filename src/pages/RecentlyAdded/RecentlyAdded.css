@@ -10,7 +10,15 @@
 .cards-container-flex {
   padding-left: 80px;
   background-color: var(--navydark);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  height: 200px;
   gap: 3rem;
-}
+  max-width: 120rem
+};
+
+
+
+
+
+
+
