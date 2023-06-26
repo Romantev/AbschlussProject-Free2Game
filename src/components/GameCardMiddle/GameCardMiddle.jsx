@@ -10,7 +10,7 @@ const GameCardMiddle = (props) => {
       <div className="card-content">
         <div className="upper-card-content">
           <div className="wrap-img-circle">
-            <div className="top-counter-circle">3</div>
+            <div className="top-counter-circle">{props.position}</div>
             <img className="card-img" src={props.game.thumbnail} />
           </div>
         </div>

@@ -29,7 +29,7 @@ const GameCardLarge = (props) => {
       <div className="card-content">
         <div className="upper-card-content">
           <div className="wrap-img-circle">
-            <div className="top-counter-circle">1</div>
+            <div className="top-counter-circle">{props.position}</div>
             <div className="card-img" style={cardLgStyle}>
               <div className="lower-card-content">
                 <span className="card-title">{props.game.title} </span>
