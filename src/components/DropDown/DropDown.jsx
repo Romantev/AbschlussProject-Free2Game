@@ -43,18 +43,21 @@ const DropDown = (props) => {
     const { value } = e.target;
     setSelectedPlatfrom(value);
     props.platform(value);
+    setDropDownPlatform(false);
   };
 
   const handleGenreChange = (e) => {
     const { value } = e.target;
     setSelectedGenre(value);
     props.genre(value);
+    setDropDownGenre(false);
   };
 
   const handleSortChange = (e) => {
     const { value } = e.target;
     setSelectedSort(value);
     props.sortby(value);
+    setDropDownSortBy(false);
   };
 
   return (

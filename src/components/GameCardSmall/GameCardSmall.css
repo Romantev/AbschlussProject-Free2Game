@@ -1,14 +1,23 @@
 .card-md {
   display: flex;
   flex-direction: column;
-  width: 24vw;
   min-width: 250px;
   background-color: var(--navylight);
   gap: 2rem;
   border-radius: 2rem;
   justify-content: space-between;
-  height: 54vh;
+  opacity: 1;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
+.animate-fade-in .card-md {
+  opacity: 0;
+}
+
+.card-md:hover {
+  transform: scale(1.1);
+}
+
 .cards-container-flex {
   display: flex;
   flex-wrap: wrap;
@@ -42,6 +51,8 @@
   border: 1px solid var(--flamingo);
   border-radius: 1rem;
   color: #fff;
+  margin: 0;
+  margin: auto 0;
 }
 
 .main-btn {
@@ -59,6 +70,7 @@
 
 .card-img {
   border-radius: 2rem;
+  object-fit: fill;
 }
 
 hr.card-line {

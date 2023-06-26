@@ -1,7 +1,6 @@
 .btn-show-all-games {
   background-color: var(--flamingo);
   padding: 1rem 2rem;
-  width: max-content;
   cursor: pointer;
   border: none;
   border-radius: 1rem;
@@ -10,4 +9,9 @@
   font-weight: 900;
   font-family: Bold;
   margin: 50px auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-show-all-games:hover {
+  transform: scale(1.2);
 }
