@@ -1,12 +1,13 @@
 .card-md {
   display: flex;
   flex-direction: column;
-  width: 15vw;
+  width: 24vw;
   min-width: 250px;
   background-color: var(--navylight);
   gap: 2rem;
   border-radius: 2rem;
   justify-content: space-between;
+  height: 54vh;
 }
 .cards-container-flex {
   display: flex;

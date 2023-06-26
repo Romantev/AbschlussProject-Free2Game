@@ -7,25 +7,19 @@
   max-width: 140rem;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 5rem;
-}
-
-.genre-category {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 5rem;
   gap: 2rem;
-  border: 1px solid white;
+  margin-left: 17rem;
 }
 
-.genre-category button {
-  color: white;
-  border: none;
-  background-color: transparent;
-  font-size: 5rem;
+.main-allgames .card-md {
+  width: 17vw;
 }
+
+.card-img {
+  border-radius: 2rem;
+  width: 100%;
+}
+

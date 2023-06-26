@@ -26,7 +26,6 @@ const DetailGame = () => {
       .then((res) => res.json())
       .then((data) => {
         setGameData(data);
-        console.log(data);
       })
       .catch((err) => {
         console.log("Fehler beim Laden", err);
