@@ -198,7 +198,7 @@
   .game-requirements-right
   .game-requirements-right-image
   img {
-  max-width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 1rem;
@@ -214,9 +214,8 @@
   .game-requirements-right
   .game-requirements-right-image
   div {
-  max-width: 100%;
+  width: 100%;
   height: 35rem;
-  margin-bottom: 5rem;
   border: 2px solid var(--white);
   border-radius: 1rem;
   display: flex;
