@@ -1,13 +1,16 @@
+.super-wrapper {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .wrapper {
-  margin-left: 80px;
   width: 100%;
 }
 
-.cards-container-flexadded {
-  margin-left: 80px;
-  height: 100vw;
-  width: 100vw;
+.cards-container-flex {
+  padding-left: 80px;
   background-color: var(--navydark);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
 }

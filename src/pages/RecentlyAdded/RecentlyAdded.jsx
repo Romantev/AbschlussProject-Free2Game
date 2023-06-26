@@ -1,7 +1,7 @@
 import "./RecentlyAdded.css";
 
 import { useContext, useEffect, useState } from "react";
-import { headerImgContext } from "../../context/Context";
+import { headerImgContext, searchInputContext } from "../../context/Context";
 
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
@@ -11,6 +11,8 @@ import BtnShowAllGames from "../../components/BtnShowAllGames/BtnShowAllGames";
 
 const RecentlyAdded = () => {
   const { headerImg, setHeaderImg } = useContext(headerImgContext);
+  const { searchInput, setSearchInput } = useContext(searchInputContext);
+
   const [gameData, setGameData] = useState([]);
   const [showAllGames, setShowAllGames] = useState(false);
 
@@ -29,6 +31,16 @@ const RecentlyAdded = () => {
       .catch((error) => console.log("Fehlermeldung: ", error));
   }, []);
 
+  //* ============ Search for Games ============ //
+  const filteredData =
+    gameData.length > 0
+      ? gameData.filter((item) =>
+          item.title.toLowerCase().includes(searchInput.toLowerCase())
+        )
+      : gameData.filter((item) =>
+          item.title.toLowerCase().includes(searchInput.toLowerCase())
+        );
+
   //* ============ Show more Games ============ //
   useEffect(() => {
     setShowAllGames(false);
@@ -41,16 +53,16 @@ const RecentlyAdded = () => {
   return (
     <div className="super-wrapper">
       <Menu />
+      <NavBar />
       <div className="wrapper">
-        <NavBar />
         <Header page={headerImg} />
 
         <main className="cards-container-flex">
-          {gameData?.slice(0, 8).map((elm, index) => {
+          {filteredData?.slice(0, 8).map((elm, index) => {
             return <GameCardSmall key={index} game={elm} />;
           })}
           {showAllGames
-            ? gameData?.slice(8, undefined).map((elm, index) => {
+            ? filteredData?.slice(8, undefined).map((elm, index) => {
                 return <GameCardSmall key={index} game={elm} />;
               })
             : null}
