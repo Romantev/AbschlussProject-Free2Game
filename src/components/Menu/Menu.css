@@ -56,3 +56,8 @@
   background-color: transparent;
   border: none;
 }
+
+a.menu-button.active {
+  background: var(--flamingo);
+  border-radius: 2rem;
+}
