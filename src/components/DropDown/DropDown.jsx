@@ -2,54 +2,68 @@ import { useState } from "react";
 import Arrow from "../../assets/Dropdown/Vector 6vector.png";
 import "./DropDown.css";
 
-const DropDown = () => {
-  const [dropDown1, setDropDown1] = useState(false);
-  const [dropDown2, setDropDown2] = useState(false);
-  const [dropDown3, setDropDown3] = useState(false);
+const DropDown = (props) => {
+  const [dropDownPlatform, setDropDownPlatform] = useState(false);
+  const [dropDownGenre, setDropDownGenre] = useState(false);
+  const [dropDownSortBy, setDropDownSortBy] = useState(false);
+
   const [selectedPlatfrom, setSelectedPlatfrom] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedSort, setSelectedSort] = useState("");
 
-  const dropDownFunction1 = () => {
-    setDropDown1(!dropDown1);
-    setDropDown2(false);
-    setDropDown3(false);
+  const dropDownFunctionPlatform = () => {
+    setDropDownPlatform(!dropDownPlatform);
+    setDropDownGenre(false);
+    props.genre("");
+    setDropDownSortBy(false);
+    props.sortby("");
+    setSelectedGenre("");
+    setSelectedSort("");
   };
-  const dropDownFunction2 = () => {
-    setDropDown1(false);
-    setDropDown2(!dropDown2);
-    setDropDown3(false);
+  const dropDownFunctionGenre = () => {
+    setDropDownGenre(!dropDownGenre);
+    setDropDownPlatform(false);
+    props.platform("");
+    setDropDownSortBy(false);
+    props.sortby("");
+    setSelectedPlatfrom("");
+    setSelectedSort("");
   };
-  const dropDownFunction3 = () => {
-    setDropDown1(false);
-    setDropDown2(false);
-    setDropDown3(!dropDown3);
+  const dropDownFunctionSortBy = () => {
+    setDropDownSortBy(!dropDownSortBy);
+    setDropDownPlatform(false);
+    props.platform("");
+    setDropDownGenre(false);
+    props.genre("");
+    setSelectedPlatfrom("");
+    setSelectedGenre("");
   };
 
   const handlePlatformChange = (e) => {
     const { value } = e.target;
     setSelectedPlatfrom(value);
-    console.log(value);
+    props.platform(value);
   };
   const handleGenreChange = (e) => {
     const { value } = e.target;
     setSelectedGenre(value);
-    console.log(value);
+    props.genre(value);
   };
   const handleSortChange = (e) => {
     const { value } = e.target;
     setSelectedSort(value);
-    console.log(value);
+    props.sortby(value);
   };
 
   return (
     <section className="dropdown-section">
+      {/* //* =========== DropDown Platform =========== */}
       <article className="dropdown-1">
-        <button onClick={dropDownFunction1}>
-          {dropDown1 ? "Close" : "Open"}
+        <button onClick={dropDownFunctionPlatform}>
+          {dropDownPlatform ? "Close" : "Open"}
           <img src={Arrow} alt="Arrow" className="arrow" />
         </button>
-        <div className={dropDown1 ? "btn-show" : "btn-none"}>
+        <div className={dropDownPlatform ? "btn-show" : "btn-none"}>
           <div>
             <form>
               <div>
@@ -76,13 +90,25 @@ const DropDown = () => {
           </div>
         </div>
       </article>
+
+      {/* //* =========== DropDown Genre =========== */}
       <article className="dropdown-2">
-        <button onClick={dropDownFunction2}>
-          {dropDown2 ? "Close" : "Open"}
+        <button onClick={dropDownFunctionGenre}>
+          {dropDownGenre ? "Close" : "Open"}
           <img src={Arrow} alt="Arrow" className="arrow" />
         </button>
-        <div className={dropDown2 ? "btn-show" : "btn-none"}>
+        <div className={dropDownGenre ? "btn-show" : "btn-none"}>
           <form>
+            <div>
+              <input
+                type="checkbox"
+                name="mmorpg"
+                value="mmorpg"
+                checked={selectedGenre === "mmorpg"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="mmorpg">MMORPG</label>
+            </div>
             <div>
               <input
                 type="checkbox"
@@ -92,26 +118,6 @@ const DropDown = () => {
                 onChange={handleGenreChange}
               />
               <label htmlFor="shooter">Shooter</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="mmoarpg"
-                value="mmoarpg"
-                checked={selectedGenre === "mmoarpg"}
-                onChange={handleGenreChange}
-              />
-              <label htmlFor="mmoarpg">MMOARPG</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="arpg"
-                value="arpg"
-                checked={selectedGenre === "arpg"}
-                onChange={handleGenreChange}
-              />
-              <label htmlFor="arpg">ARPG</label>
             </div>
             <div>
               <input
@@ -126,12 +132,212 @@ const DropDown = () => {
             <div>
               <input
                 type="checkbox"
-                name="mmorpg"
-                value="mmorpg"
-                checked={selectedGenre === "mmorpg"}
+                name="moba"
+                value="moba"
+                checked={selectedGenre === "moba"}
                 onChange={handleGenreChange}
               />
-              <label htmlFor="mmorpg">MMORPG</label>
+              <label htmlFor="moba">Moba</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="racing"
+                value="racing"
+                checked={selectedGenre === "racing"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="racing">Racing</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="sports"
+                value="sports"
+                checked={selectedGenre === "sports"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="sports">Sports</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="social"
+                value="social"
+                checked={selectedGenre === "social"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="social">Social</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="sandbox"
+                value="sandbox"
+                checked={selectedGenre === "sandbox"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="sandbox">Sandbox</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="open-world"
+                value="open-world"
+                checked={selectedGenre === "open-world"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="open-world">Open-World</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="survival"
+                value="survival"
+                checked={selectedGenre === "survival"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="survival">Survival</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="pvp"
+                value="pvp"
+                checked={selectedGenre === "pvp"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="pvp">PvP</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="pve"
+                value="pve"
+                checked={selectedGenre === "pve"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="pve">PvE</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="pixel"
+                value="pixel"
+                checked={selectedGenre === "pixel"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="pixel">Pixel</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="turn-based"
+                value="turn-based"
+                checked={selectedGenre === "turn-based"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="turn-based">Turn-Based</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="first-person"
+                value="first-person"
+                checked={selectedGenre === "first-person"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="first-person">First-Person</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="third-Person"
+                value="third-Person"
+                checked={selectedGenre === "third-Person"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="third-Person">Ttop-downhird-Person</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="top-down"
+                value="top-down"
+                checked={selectedGenre === "top-down"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="top-down">Top-Down</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="card"
+                value="card"
+                checked={selectedGenre === "card"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="card">Card</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="battle-royale"
+                value="battle-royale"
+                checked={selectedGenre === "battle-royale"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="battle-royale">Battle-Royale</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="3d"
+                value="3d"
+                checked={selectedGenre === "3d"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="3d">3D</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="2d"
+                value="2d"
+                checked={selectedGenre === "2d"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="2d">2D</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="anime"
+                value="anime"
+                checked={selectedGenre === "anime"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="anime">Anime</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="fantasy"
+                value="fantasy"
+                checked={selectedGenre === "fantasy"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="fantasy">Fantasy</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="sci-fi"
+                value="sci-fi"
+                checked={selectedGenre === "sci-fi"}
+                onChange={handleGenreChange}
+              />
+              <label htmlFor="sci-fi">Sci-Fi</label>
             </div>
             <div>
               <input
@@ -156,92 +362,43 @@ const DropDown = () => {
             <div>
               <input
                 type="checkbox"
-                name="battleroyale"
-                value="battleroyale"
-                checked={selectedGenre === "battleroyale"}
+                name="action"
+                value="action"
+                checked={selectedGenre === "action"}
                 onChange={handleGenreChange}
               />
-              <label htmlFor="battleroyale">Battle-Royale</label>
+              <label htmlFor="action">Action</label>
             </div>
             <div>
               <input
                 type="checkbox"
-                name="moba"
-                value="moba"
-                checked={selectedGenre === "moba"}
+                name="horror"
+                value="horror"
+                checked={selectedGenre === "horror"}
                 onChange={handleGenreChange}
               />
-              <label htmlFor="moba">MOBA</label>
+              <label htmlFor="horror">Horror</label>
             </div>
             <div>
               <input
                 type="checkbox"
-                name="sports"
-                value="sports"
-                checked={selectedGenre === "sports"}
+                name="tower-defense"
+                value="tower-defense"
+                checked={selectedGenre === "tower-defense"}
                 onChange={handleGenreChange}
               />
-              <label htmlFor="sports">Sports</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="racing"
-                value="racing"
-                checked={selectedGenre === "racing"}
-                onChange={handleGenreChange}
-              />
-              <label htmlFor="racing">Racing</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="cardgame"
-                value="cardgame"
-                checked={selectedGenre === "cardgame"}
-                onChange={handleGenreChange}
-              />
-              <label htmlFor="cardgame">Card-Game</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="mmo"
-                value="mmo"
-                checked={selectedGenre === "mmo"}
-                onChange={handleGenreChange}
-              />
-              <label htmlFor="mmo">MMO</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="social"
-                value="social"
-                checked={selectedGenre === "social"}
-                onChange={handleGenreChange}
-              />
-              <label htmlFor="social">Social</label>
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="fantasy"
-                value="fantasy"
-                checked={selectedGenre === "fantasy"}
-                onChange={handleGenreChange}
-              />
-              <label htmlFor="fantasy">Fantasy</label>
+              <label htmlFor="tower-defense">Tower-Defense</label>
             </div>
           </form>
         </div>
       </article>
+      {/* //* =========== DropDown SortBy =========== */}
       <article className="dropdown-3">
-        <button onClick={dropDownFunction3}>
-          {dropDown3 ? "Close" : "Open"}
+        <button onClick={dropDownFunctionSortBy}>
+          {dropDownSortBy ? "Close" : "Open"}
           <img src={Arrow} alt="Arrow" className="arrow" />
         </button>
-        <div className={dropDown3 ? "btn-show" : "btn-none"}>
+        <div className={dropDownSortBy ? "btn-show" : "btn-none"}>
           <form>
             <div>
               <input
@@ -276,12 +433,12 @@ const DropDown = () => {
             <div>
               <input
                 type="checkbox"
-                name="releasedate"
-                value="releasedate"
-                checked={selectedSort === "releasedate"}
+                name="release-date"
+                value="release-date"
+                checked={selectedSort === "release-date"}
                 onChange={handleSortChange}
               />
-              <label htmlFor="releasedate">Releasedate</label>
+              <label htmlFor="release-date">Release Date</label>
             </div>
           </form>
         </div>
