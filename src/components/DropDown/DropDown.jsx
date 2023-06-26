@@ -44,11 +44,13 @@ const DropDown = (props) => {
     setSelectedPlatfrom(value);
     props.platform(value);
   };
+
   const handleGenreChange = (e) => {
     const { value } = e.target;
     setSelectedGenre(value);
     props.genre(value);
   };
+
   const handleSortChange = (e) => {
     const { value } = e.target;
     setSelectedSort(value);
