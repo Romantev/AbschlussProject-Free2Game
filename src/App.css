@@ -38,3 +38,24 @@ html {
 img {
   max-width: 100%;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.3rem;
+  border-radius: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--babyblue);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
