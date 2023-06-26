@@ -32,9 +32,11 @@ const SectionTop4Browser = (props) => {
             <GameCardSmall game={top4Browser[2]} />
             <GameCardSmall game={top4Browser[3]} />
           </article>
+          <div className="btn-right-bottom">
           <NavLink to="/all-games">
             <BtnShowMore />
           </NavLink>
+          </div>
         </section>
       ) : null}
     </>

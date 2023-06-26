@@ -64,7 +64,7 @@ const DropDown = (props) => {
           <img src={Arrow} alt="Arrow" className="arrow" />
         </button>
         <div className={dropDownPlatform ? "btn-show" : "btn-none"}>
-          <div className="dropdown-content">
+          <div>
             <form>
               <div>
                 <input
@@ -430,7 +430,7 @@ const DropDown = (props) => {
         </button>
         <div className={dropDownSortBy ? "btn-show" : "btn-none"}>
           <form>
-            <div>
+            <div className="checknlabel">
               <input
                 type="checkbox"
                 name="relevance"
