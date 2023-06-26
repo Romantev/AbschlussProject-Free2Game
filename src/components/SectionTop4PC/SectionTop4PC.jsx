@@ -30,14 +30,20 @@ const SectionTop4PC = (props) => {
             Top 4 Games for PC in {props.month} {props.year}
           </h2>
           <article className="article-recentlyadded">
-            <GameCardLarge game={top4PC[0]} position="1" />
-            <GameCardMiddle game={top4PC[1]} position="2" />
-            <GameCardMiddle game={top4PC[2]} position="3" />
-            <GameCardMiddle game={top4PC[3]} position="4" />
+            <div className="big_flex">
+              <GameCardLarge game={top4PC[0]} position="1"/>
+            </div>
+            <div className="small-column-flex">
+              <GameCardMiddle game={top4PC[1]} position="2"/>
+              <GameCardMiddle game={top4PC[2]} position="3"/>
+              <GameCardMiddle game={top4PC[3]} position="4"/>
+            </div>
           </article>
+          <div className="btn-right-bottom">
           <NavLink to="/all-games">
             <BtnShowMore />
           </NavLink>
+          </div>
         </section>
       ) : null}
     </>
