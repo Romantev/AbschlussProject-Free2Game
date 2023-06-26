@@ -16,6 +16,7 @@ const DetailGame = () => {
       .then((res) => res.json())
       .then((data) => {
         setGameData(data);
+        console.log(data);
       })
       .catch((err) => {
         console.log("Fehler beim Laden", err);
@@ -23,7 +24,7 @@ const DetailGame = () => {
   }, []);
 
   return (
-    <div className="wrapper">
+    <div className="details-wrapper">
       {gameData ? (
         <>
           <NavBar />
@@ -80,13 +81,15 @@ const DetailGame = () => {
             <article className="game-requirements">
               <div className="game-requirements-left">
                 <div className="game-requirements-left-image">
-                  {gameData.screenshots[1].image ? (
+                  {gameData.screenshots[1] && gameData.screenshots[1].image ? (
                     <img
                       src={gameData.screenshots[1].image}
                       alt={gameData.title}
                     />
                   ) : (
-                    <h2>Keine weiteren Bilder vorhanden</h2>
+                    <div>
+                      <h3>Keine weiteren Bilder vorhanden</h3>
+                    </div>
                   )}
                 </div>
                 <div className="game-requirements-left-data">
@@ -111,13 +114,15 @@ const DetailGame = () => {
               </div>
               <div className="game-requirements-right">
                 <div className="game-requirements-right-image">
-                  {gameData.screenshots[2].image ? (
+                  {gameData.screenshots[2] && gameData.screenshots[2].image ? (
                     <img
                       src={gameData.screenshots[2].image}
                       alt={gameData.title}
                     />
                   ) : (
-                    <h2>Keine weiteren Bilder vorhanden</h2>
+                    <div>
+                      <h3>Keine weiteren Bilder vorhanden</h3>
+                    </div>
                   )}
                 </div>
                 <div className="game-requirements-right-data">

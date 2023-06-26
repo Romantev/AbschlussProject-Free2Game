@@ -13,6 +13,21 @@
   box-sizing: border-box;
 }
 
+/* ! ++++++++++ FONTS ++++++++++ */
+
+@font-face {
+  font-family: "Ti-Regular";
+  src: url(../../assets/Titillium_Web/TitilliumWeb-Regular.ttf);
+}
+@font-face {
+  font-family: "Ti-Light";
+  src: url(../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
+}
+@font-face {
+  font-family: "Ti-Bold";
+  src: url(../../assets/Titillium_Web/TitilliumWeb-Bold.ttf);
+}
+
 @font-face {
   font-family: "Regular";
   src: url(./assets/Oswald/static/Oswald-Regular.ttf);
