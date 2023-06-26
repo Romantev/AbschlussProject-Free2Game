@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./GameCardLarge.css";
 import "../GameCardSmall/GameCardSmall.css";
 import { useEffect, useState } from "react";
+import Windows from "../../assets/Platforms/Windows.svg";
+import Browser from "../../assets/Platforms/Browser.svg";
 
 const GameCardLarge = (props) => {
   const [imgBig, setImgBig] = useState();
@@ -27,7 +29,7 @@ const GameCardLarge = (props) => {
       <div className="card-content">
         <div className="upper-card-content">
           <div className="wrap-img-circle">
-            <div className="top-counter-circle">1</div>
+            <div className="top-counter-circle">{props.position}</div>
             <div className="card-img" style={cardLgStyle}>
               <div className="lower-card-content">
                 <span className="card-title">{props.game.title} </span>
@@ -36,7 +38,11 @@ const GameCardLarge = (props) => {
                 </Link>
                 <div className="row">
                   <span className="card-genre-and-platform">
-                    {props.game.platform}
+                    {props.game.platform === "PC (Windows)" ? (
+                      <img src={Windows} alt={props.game.title} />
+                    ) : (
+                      <img src={Browser} alt={props.game.title} />
+                    )}
                   </span>
                   <span className="card-genre-and-platform">
                     {props.game.genre}
