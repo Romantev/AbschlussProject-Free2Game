@@ -60,16 +60,17 @@ const DropDown = (props) => {
       {/* //* =========== DropDown Platform =========== */}
       <article className="dropdown-1">
         <button onClick={dropDownFunctionPlatform}>
-          {dropDownPlatform ? "Close" : "Open"}
+          {dropDownPlatform ? "Platform" : "Platform"}
           <img src={Arrow} alt="Arrow" className="arrow" />
         </button>
         <div className={dropDownPlatform ? "btn-show" : "btn-none"}>
-          <div>
+          <div className="dropdown-content">
             <form>
               <div>
                 <input
                   type="checkbox"
                   name="pc"
+                  id="pc"
                   value="pc"
                   checked={selectedPlatfrom === "pc"}
                   onChange={handlePlatformChange}
@@ -80,6 +81,7 @@ const DropDown = (props) => {
                 <input
                   type="checkbox"
                   name="browser"
+                  id="browser"
                   value="browser"
                   checked={selectedPlatfrom === "browser"}
                   onChange={handlePlatformChange}
@@ -94,12 +96,12 @@ const DropDown = (props) => {
       {/* //* =========== DropDown Genre =========== */}
       <article className="dropdown-2">
         <button onClick={dropDownFunctionGenre}>
-          {dropDownGenre ? "Close" : "Open"}
+          {dropDownGenre ? "Genre/Tag" : "Genre/Tag"}
           <img src={Arrow} alt="Arrow" className="arrow" />
         </button>
         <div className={dropDownGenre ? "btn-show" : "btn-none"}>
           <form>
-            <div>
+            <div className="checknlabel">
               <input
                 type="checkbox"
                 name="mmorpg"
@@ -113,6 +115,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="shooter"
+                id="shooter"
                 value="shooter"
                 checked={selectedGenre === "shooter"}
                 onChange={handleGenreChange}
@@ -123,6 +126,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="strategy"
+                id="strategy"
                 value="strategy"
                 checked={selectedGenre === "strategy"}
                 onChange={handleGenreChange}
@@ -133,6 +137,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="moba"
+                id="moba"
                 value="moba"
                 checked={selectedGenre === "moba"}
                 onChange={handleGenreChange}
@@ -144,6 +149,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="racing"
                 value="racing"
+                id="racing"
                 checked={selectedGenre === "racing"}
                 onChange={handleGenreChange}
               />
@@ -153,6 +159,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="sports"
+                id="sports"
                 value="sports"
                 checked={selectedGenre === "sports"}
                 onChange={handleGenreChange}
@@ -164,6 +171,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="social"
                 value="social"
+                id="social"
                 checked={selectedGenre === "social"}
                 onChange={handleGenreChange}
               />
@@ -173,6 +181,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="sandbox"
+                id="sandbox"
                 value="sandbox"
                 checked={selectedGenre === "sandbox"}
                 onChange={handleGenreChange}
@@ -183,6 +192,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="open-world"
+                id="open-world"
                 value="open-world"
                 checked={selectedGenre === "open-world"}
                 onChange={handleGenreChange}
@@ -193,6 +203,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="survival"
+                id="survival"
                 value="survival"
                 checked={selectedGenre === "survival"}
                 onChange={handleGenreChange}
@@ -203,6 +214,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="pvp"
+                id="pvp"
                 value="pvp"
                 checked={selectedGenre === "pvp"}
                 onChange={handleGenreChange}
@@ -213,6 +225,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="pve"
+                id="pve"
                 value="pve"
                 checked={selectedGenre === "pve"}
                 onChange={handleGenreChange}
@@ -224,6 +237,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="pixel"
                 value="pixel"
+                id="pixel"
                 checked={selectedGenre === "pixel"}
                 onChange={handleGenreChange}
               />
@@ -234,6 +248,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="turn-based"
                 value="turn-based"
+                id="turn-based"
                 checked={selectedGenre === "turn-based"}
                 onChange={handleGenreChange}
               />
@@ -243,6 +258,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="first-person"
+                id="first-person"
                 value="first-person"
                 checked={selectedGenre === "first-person"}
                 onChange={handleGenreChange}
@@ -253,6 +269,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="third-Person"
+                id="third-Person"
                 value="third-Person"
                 checked={selectedGenre === "third-Person"}
                 onChange={handleGenreChange}
@@ -263,6 +280,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="top-down"
+                id="top-down"
                 value="top-down"
                 checked={selectedGenre === "top-down"}
                 onChange={handleGenreChange}
@@ -273,6 +291,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="card"
+                id="card"
                 value="card"
                 checked={selectedGenre === "card"}
                 onChange={handleGenreChange}
@@ -283,6 +302,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="battle-royale"
+                id="battle-royale"
                 value="battle-royale"
                 checked={selectedGenre === "battle-royale"}
                 onChange={handleGenreChange}
@@ -294,6 +314,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="3d"
                 value="3d"
+                id="3d"
                 checked={selectedGenre === "3d"}
                 onChange={handleGenreChange}
               />
@@ -304,6 +325,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="2d"
                 value="2d"
+                id="2d"
                 checked={selectedGenre === "2d"}
                 onChange={handleGenreChange}
               />
@@ -314,6 +336,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="anime"
                 value="anime"
+                id="anime"
                 checked={selectedGenre === "anime"}
                 onChange={handleGenreChange}
               />
@@ -324,6 +347,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="fantasy"
                 value="fantasy"
+                id="fantasy"
                 checked={selectedGenre === "fantasy"}
                 onChange={handleGenreChange}
               />
@@ -333,6 +357,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="sci-fi"
+                id="sci-fi"
                 value="sci-fi"
                 checked={selectedGenre === "sci-fi"}
                 onChange={handleGenreChange}
@@ -344,6 +369,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="fighting"
                 value="fighting"
+                id="fighting"
                 checked={selectedGenre === "fighting"}
                 onChange={handleGenreChange}
               />
@@ -353,6 +379,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="action-rpg"
+                id="action-rpg"
                 value="action-rpg"
                 checked={selectedGenre === "action-rpg"}
                 onChange={handleGenreChange}
@@ -363,6 +390,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="action"
+                id="action"
                 value="action"
                 checked={selectedGenre === "action"}
                 onChange={handleGenreChange}
@@ -373,6 +401,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="horror"
+                id="horror"
                 value="horror"
                 checked={selectedGenre === "horror"}
                 onChange={handleGenreChange}
@@ -383,6 +412,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="tower-defense"
+                id="tower-defense"
                 value="tower-defense"
                 checked={selectedGenre === "tower-defense"}
                 onChange={handleGenreChange}
@@ -395,7 +425,7 @@ const DropDown = (props) => {
       {/* //* =========== DropDown SortBy =========== */}
       <article className="dropdown-3">
         <button onClick={dropDownFunctionSortBy}>
-          {dropDownSortBy ? "Close" : "Open"}
+          {dropDownSortBy ? "Sort by" : "Sort by"}
           <img src={Arrow} alt="Arrow" className="arrow" />
         </button>
         <div className={dropDownSortBy ? "btn-show" : "btn-none"}>
@@ -405,6 +435,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="relevance"
                 value="relevance"
+                id="relevance"
                 checked={selectedSort === "relevance"}
                 onChange={handleSortChange}
               />
@@ -414,6 +445,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="alphabetical"
+                id="alphabetical"
                 value="alphabetical"
                 checked={selectedSort === "alphabetical"}
                 onChange={handleSortChange}
@@ -424,6 +456,7 @@ const DropDown = (props) => {
               <input
                 type="checkbox"
                 name="popularity"
+                id="popularity"
                 value="popularity"
                 checked={selectedSort === "popularity"}
                 onChange={handleSortChange}
@@ -435,6 +468,7 @@ const DropDown = (props) => {
                 type="checkbox"
                 name="release-date"
                 value="release-date"
+                id="release-date"
                 checked={selectedSort === "release-date"}
                 onChange={handleSortChange}
               />

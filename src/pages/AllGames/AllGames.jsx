@@ -1,6 +1,7 @@
-import { useContext } from "react";
+
 import "./AllGames.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
 import {
   gameContext,
   searchInputContext,
