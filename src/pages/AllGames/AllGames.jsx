@@ -1,4 +1,3 @@
-
 import "./AllGames.css";
 import { useContext, useEffect, useState } from "react";
 
@@ -21,6 +20,7 @@ const AllGames = () => {
 
   const [showAllGames, setShowAllGames] = useState(false);
   const [selectedData, setSelectedData] = useState([]);
+
   const [selectedPlatform, setSelectedPlatform] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedSortBy, setSelectedSortBy] = useState("");
@@ -80,6 +80,7 @@ const AllGames = () => {
           genre={setSelectedGenre}
           sortby={setSelectedSortBy}
         />
+
         <main className="main-allgames">
           {filteredData?.slice(0, 8).map((elm, index) => {
             return <GameCardSmall game={elm} key={index} />;
