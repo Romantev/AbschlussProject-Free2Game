@@ -25,6 +25,8 @@ const AllGames = () => {
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedSortBy, setSelectedSortBy] = useState("");
 
+  const [animateFadeIn, setAnimateFadeIn] = useState(false);
+
   //* ============ fetch if DropDown is selected ============ //
   useEffect(() => {
     fetchGames();
@@ -69,11 +71,21 @@ const AllGames = () => {
     setShowAllGames(true);
   };
 
+  //* ============ Check for Animation ============ //
+  useEffect(() => {
+    if (filteredData.length > 0) {
+      setAnimateFadeIn(true);
+      setTimeout(() => {
+        setAnimateFadeIn(false);
+      }, 300);
+    }
+  }, [selectedData]);
+
   return (
-    <div className="super-wrapper">
+    <div className={`super-wrapper ${animateFadeIn ? "animate-fade-in" : ""}`}>
       <Menu />
+      <NavBar />
       <div className="wrapper">
-        <NavBar />
         <Header page={headerImg} />
         <DropDown
           platform={setSelectedPlatform}

@@ -7,4 +7,9 @@
   font-weight: bolder;
   cursor: pointer;
   align-self: flex-end;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-showmore:hover {
+  transform: scale(1.2);
 }
