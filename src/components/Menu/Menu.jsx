@@ -1,6 +1,6 @@
 import "./Menu.css";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { navMoveContext } from "../../context/Context";
 
@@ -28,51 +28,49 @@ const Menu = () => {
     <>
       {menuBar ? (
         //* =========== Menu open =========== //
-        <div className="super-wrapper">
-          <div className="menu-bar-open">
-            <button onClick={closeMenuBar} className="menu-button-close">
-              <CloseIcon />
-            </button>
-            <div className="menu-navigation">
-              <NavLink to="/" className="menu-button">
-                <div>
-                  <HomeIcon />
-                  <h2>Home</h2>
-                </div>
-              </NavLink>
-              <NavLink to="/all-games" className="menu-button">
-                <div>
-                  <GamesIcon />
-                  <h2>All Games</h2>
-                </div>
-              </NavLink>
-              <NavLink to="/recently-added" className="menu-button">
-                <div>
-                  <RecentlyAddedIcon />
-                  <h2>Recenty Added</h2>
-                </div>
-              </NavLink>
-            </div>
+
+        <div className="menu-bar-open">
+          <button onClick={closeMenuBar} className="menu-button-close">
+            <CloseIcon />
+          </button>
+          <div className="menu-navigation">
+            <NavLink to="/" className="menu-button">
+              <div>
+                <HomeIcon />
+                <h2>Home</h2>
+              </div>
+            </NavLink>
+            <NavLink to="/all-games" className="menu-button">
+              <div>
+                <GamesIcon />
+                <h2>All Games</h2>
+              </div>
+            </NavLink>
+            <NavLink to="/recently-added" className="menu-button">
+              <div>
+                <RecentlyAddedIcon />
+                <h2>Recenty Added</h2>
+              </div>
+            </NavLink>
           </div>
         </div>
       ) : (
         //* =========== Menu closed =========== //
-        <div className="super-wrapper">
-          <div className="menu-bar-close">
-            <button onClick={openMenuBar} className="menu-button">
-              <BurgerIcon />
-            </button>
-            <div className="menu-navigation">
-              <NavLink to="/" className="menu-button">
-                <HomeIcon />
-              </NavLink>
-              <NavLink to="/all-games" className="menu-button">
-                <GamesIcon />
-              </NavLink>
-              <NavLink to="/recently-added" className="menu-button">
-                <RecentlyAddedIcon />
-              </NavLink>
-            </div>
+
+        <div className="menu-bar-close">
+          <button onClick={openMenuBar} className="menu-button">
+            <BurgerIcon />
+          </button>
+          <div className="menu-navigation">
+            <NavLink to="/" className="menu-button">
+              <HomeIcon />
+            </NavLink>
+            <NavLink to="/all-games" className="menu-button">
+              <GamesIcon />
+            </NavLink>
+            <NavLink to="/recently-added" className="menu-button">
+              <RecentlyAddedIcon />
+            </NavLink>
           </div>
         </div>
       )}
