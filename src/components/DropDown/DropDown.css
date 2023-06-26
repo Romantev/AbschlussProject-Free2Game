@@ -9,12 +9,11 @@ label {
 .dropdown-section {
   max-width: 140rem;
   height: 9rem;
-  margin: 0 auto;
   padding-top: 2rem;
   display: flex;
   align-items: flex-start;
-  justify-content: space-around;
   position: relative;
+  margin: 5rem auto;
 }
 
 .dropdown-content {
@@ -68,6 +67,7 @@ label {
   border-top-right-radius: 1rem; */
   border-radius: 1rem;
   color: var(--white);
+  font-family: "Oswald";
   font-size: 18px;
   width: 25rem;
   height: 5rem;

@@ -66,8 +66,11 @@ const RecentlyAdded = () => {
                 return <GameCardSmall key={index} game={elm} />;
               })
             : null}
+              <div className="showAllGames">
+                <BtnShowAllGames function={showMoreGames} />
+              </div>
         </main>
-        <BtnShowAllGames function={showMoreGames} />
+       
       </div>
     </div>
   );

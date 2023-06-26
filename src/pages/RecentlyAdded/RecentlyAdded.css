@@ -10,9 +10,14 @@
 .cards-container-flex {
   padding-left: 80px;
   background-color: var(--navydark);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  height: 200px;
   gap: 3rem;
+  max-width: 120rem
+}
+
+.cards-container-flex .card-md {
+  width: 15vw;
 }
 
 .btn-right-bottom {
@@ -21,3 +26,4 @@
   width: 100%;
   padding: 0 0 4rem 0;
 }
+
