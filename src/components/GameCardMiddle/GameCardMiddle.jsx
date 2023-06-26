@@ -1,6 +1,8 @@
 import "./GameCardMiddle.css";
 import { Link } from "react-router-dom";
 import "../GameCardSmall/GameCardSmall.css";
+import Windows from "../../assets/Platforms/Windows.svg";
+import Browser from "../../assets/Platforms/Browser.svg";
 
 const GameCardMiddle = (props) => {
   return (
@@ -20,7 +22,11 @@ const GameCardMiddle = (props) => {
           </Link>
           <div className="row">
             <span className="card-genre-and-platform">
-              {props.game.platform}
+              {props.game.platform === "PC (Windows)" ? (
+                <img src={Windows} alt={props.game.title} />
+              ) : (
+                <img src={Browser} alt={props.game.title} />
+              )}
             </span>
             <span className="card-genre-and-platform">{props.game.genre}</span>
           </div>
@@ -28,6 +34,6 @@ const GameCardMiddle = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default GameCardMiddle;
