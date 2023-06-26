@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 60rem;
 }
 
 .card-md-hor .card-content {
@@ -61,4 +62,9 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+.small-column-flex .upper-card-content {
+    width: 100%;
+    max-width: 37rem;
 }
