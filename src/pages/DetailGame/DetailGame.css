@@ -1,6 +1,21 @@
+/* ! ++++++++++ FONT ++++++++++ */
+
+@font-face {
+  font-family: "Ti-Regular";
+  src: url(../../assets/Titillium_Web/TitilliumWeb-Regular.ttf);
+}
+@font-face {
+  font-family: "Ti-Light";
+  src: url(../../assets/Titillium_Web/TitilliumWeb-Light.ttf);
+}
+@font-face {
+  font-family: "Ti-Bold";
+  src: url(../../assets/Titillium_Web/TitilliumWeb-Bold.ttf);
+}
+
 /* ! ++++++++++ WRAPPER ++++++++++ */
 
-.wrapper {
+.details-wrapper {
   width: 100vw;
   min-height: 100vh;
   background-color: var(--navydark);
@@ -27,13 +42,15 @@
 }
 .detail-game-section p {
   font-size: 1.6rem;
+  font-family: "Ti-Light";
 }
 
 /* ! ++++++++++ DETAIL-GAME-SECTION-IMG ++++++++++ */
 
 .detail-game-section .header-img {
-  width: 100%;
-  margin-bottom: 5rem;
+  max-width: 140rem;
+  height: 70rem;
+  margin: 0 auto 5rem auto;
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -42,7 +59,7 @@
 }
 
 .detail-game-section .header-img .topimg {
-  width: 100%;
+  max-width: 140rem;
   height: 65rem;
   border-radius: 1rem;
   margin: 0 auto;
@@ -52,11 +69,12 @@
 
 .detail-game-section .header-img .blurimg {
   position: absolute;
-  width: 75%;
-  top: 0;
+  max-width: 150rem;
+  height: 70rem;
+  top: 10rem;
   filter: blur(60px) brightness(1.5);
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 /* ! ++++++++++ GAME-DETAILS ++++++++++ */
@@ -137,7 +155,6 @@
   max-width: 56rem;
   white-space: break-spaces;
   text-align: justify;
-  font-family: "Light";
 }
 
 /* ! ++++++++++ GAME-REQUIREMENTS ++++++++++ */
@@ -153,13 +170,53 @@
 
 /* ! ++++++++++ GAME-REQUIREMENTS-IMAGES ++++++++++ */
 
-.detail-game-section .game-requirements .game-requirements-left img,
-.detail-game-section .game-requirements .game-requirements-right img {
+.detail-game-section
+  .game-requirements
+  .game-requirements-left
+  .game-requirements-left-image,
+.detail-game-section
+  .game-requirements
+  .game-requirements-right
+  .game-requirements-right-image {
+  width: 100%;
+  height: 35rem;
+  margin-bottom: 5rem;
+}
+
+.detail-game-section
+  .game-requirements
+  .game-requirements-left
+  .game-requirements-left-image
+  img,
+.detail-game-section
+  .game-requirements
+  .game-requirements-right
+  .game-requirements-right-image
+  img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.detail-game-section
+  .game-requirements
+  .game-requirements-left
+  .game-requirements-left-image
+  div,
+.detail-game-section
+  .game-requirements
+  .game-requirements-right
+  .game-requirements-right-image
+  div {
   max-width: 100%;
   height: 35rem;
   margin-bottom: 5rem;
-  object-fit: cover;
+  border: 2px solid var(--white);
   border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ! ++++++++++ GAME-REQUIREMENTS-DATA ++++++++++ */
