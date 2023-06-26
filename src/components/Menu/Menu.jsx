@@ -1,6 +1,6 @@
 import "./Menu.css";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { navMoveContext } from "../../context/Context";
 
