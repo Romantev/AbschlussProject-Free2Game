@@ -25,15 +25,19 @@ const SectionTop4PC = (props) => {
       top4PC[1]?.thumbnail &&
       top4PC[2]?.thumbnail &&
       top4PC[3]?.thumbnail ? (
-        <section className="section-recentlyadded">
+        <section className="section-top-4-games">
           <h2 className="section-title">
             Top 4 Games for PC in {props.month} {props.year}
           </h2>
-          <article className="article-recentlyadded">
-            <GameCardLarge game={top4PC[0]} />
-            <GameCardMiddle game={top4PC[1]} />
-            <GameCardMiddle game={top4PC[2]} />
-            <GameCardMiddle game={top4PC[3]} />
+          <article className="top-4-games">
+            <div className="xl-card-container">
+              <GameCardLarge game={top4PC[0]} />
+            </div>
+            <div className="mid-card-container">
+              <GameCardMiddle game={top4PC[1]} />
+              <GameCardMiddle game={top4PC[2]} />
+              <GameCardMiddle game={top4PC[3]} />
+            </div>
           </article>
           <NavLink to="/all-games">
             <BtnShowMore />

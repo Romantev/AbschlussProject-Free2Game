@@ -1,6 +1,7 @@
 .header-home {
   height: 60vh;
   width: 100%;
+  margin-bottom: 10rem;
 }
 
 .header-img-home {
@@ -35,13 +36,14 @@
 
 .header-title {
   position: absolute;
-  left: 5%;
+  left: 10%;
   bottom: 10%;
 }
 
 .header-title h1 {
   color: white;
-  font-size: 3.5rem;
+  font-size: 4.8rem;
   width: 50%;
-  line-height: 4rem;
+  line-height: 5rem;
+  text-align:left;
 }

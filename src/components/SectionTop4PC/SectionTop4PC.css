@@ -1,0 +1,16 @@
+.top-4-games{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.xl-card-container{
+   
+}
+
+.mid-card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
