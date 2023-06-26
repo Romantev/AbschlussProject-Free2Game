@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
 import "./DetailGame.css";
+
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { headerImgContext } from "../../context/Context";
+
 import Windows from "../../assets/Platforms/Windows.svg";
 import Browser from "../../assets/Platforms/Browser.svg";
 import Button from "../../components/Button/Button.jsx";
@@ -8,8 +11,15 @@ import NavBar from "../../components/NavBar/NavBar.jsx";
 import Menu from "../../components/Menu/Menu.jsx";
 
 const DetailGame = () => {
+  const { headerImg, setHeaderImg } = useContext(headerImgContext);
+
   const params = useParams();
   const [gameData, setGameData] = useState();
+
+  //* ============ Set Header Img for Page ============ //
+  useEffect(() => {
+    setHeaderImg("detailgame");
+  }, []);
 
   useEffect(() => {
     fetch(`https://www.freetogame.com/api/game?id=${params.gameid}`)

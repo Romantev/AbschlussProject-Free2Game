@@ -63,23 +63,12 @@ const Home = () => {
         <Menu />
         <div className="main-body">
           <Header page={headerImg} />
-          //* ============ Check if Searching ============ //
-          {searchInput.length > 0 ? (
-            <div className="cards-container-flex">
-              {filteredData?.map((game, index) => (
-                <div className="card-md" key={index}>
-                  <GameCardSmall game={game} />
-                </div>
-              ))}
-            </div>
-          ) : (
-            //* ============ Main Body ============ //
-            <main className="home-main">
-              <SectionRecentlyAdded />
-              <SectionTop4PC month={month} year={year} />
-              <SectionTop4Browser month={month} year={year} />
-            </main>
-          )}
+          //* ============ Main Body ============ //
+          <main className="home-main">
+            <SectionRecentlyAdded />
+            <SectionTop4PC month={month} year={year} />
+            <SectionTop4Browser month={month} year={year} />
+          </main>
         </div>
       </div>
     </>
