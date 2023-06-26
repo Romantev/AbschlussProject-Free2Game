@@ -69,10 +69,9 @@
 
 .detail-game-section .header-img .blurimg {
   position: absolute;
-  min-width: 137rem;
-  max-width: 137rem;
-  top: 0;
-
+  min-width: 125rem;
+  max-width: 125rem;
+  top: 10rem;
   filter: blur(60px) brightness(1.5);
   z-index: 0;
   opacity: 0.3;
