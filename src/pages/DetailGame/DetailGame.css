@@ -160,8 +160,9 @@
 /* ! ++++++++++ GAME-REQUIREMENTS ++++++++++ */
 
 .detail-game-section .game-requirements {
-  width: 100%;
+  max-width: 140rem;
   height: 75rem;
+  margin: 0 auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
