@@ -17,8 +17,8 @@ const AllGames = () => {
   const { searchInput, setSearchInput } = useContext(searchInputContext);
   const { headerImg, setHeaderImg } = useContext(headerImgContext);
   const { gameData, setGameData } = useContext(gameContext);
-  const [showAllGames, setShowAllGames] = useState(false);
 
+  const [showAllGames, setShowAllGames] = useState(false);
   const [selectedData, setSelectedData] = useState([]);
   const [selectedPlatform, setSelectedPlatform] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
