@@ -31,9 +31,11 @@ const SectionRecentlyAdded = () => {
             <GameCardSmall game={recentlyGames[2]} />
             <GameCardSmall game={recentlyGames[3]} />
           </article>
+          <div className="btn-right-bottom">
           <NavLink to="/recently-added">
             <BtnShowMore />
           </NavLink>
+          </div>
         </section>
       ) : null}
     </>

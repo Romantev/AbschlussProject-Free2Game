@@ -14,11 +14,16 @@
   height: 200px;
   gap: 3rem;
   max-width: 120rem
-};
+}
 
+.cards-container-flex .card-md {
+  width: 15vw;
+}
 
-
-
-
-
+.btn-right-bottom {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 0 4rem 0;
+}
 
