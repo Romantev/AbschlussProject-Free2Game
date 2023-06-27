@@ -6,3 +6,4 @@ export const headerImgContext = createContext();
 export const navMoveContext = createContext();
 export const menuBarContext = createContext();
 export const loadingAnimationContext = createContext();
+export const isLoadingContext = createContext();
