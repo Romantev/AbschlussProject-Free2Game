@@ -5,3 +5,12 @@
   gap: 1rem;
 }
 
+<<<<<<< HEAD
+=======
+main.home-main {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-left: 12rem;
+}
+>>>>>>> 1dd3200f56baff165c754dcf26b456fa43240ce7

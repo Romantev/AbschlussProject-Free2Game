@@ -7,5 +7,13 @@
   font-weight: bolder;
   cursor: pointer;
   align-self: flex-end;
+<<<<<<< HEAD
   margin-bottom: 7.5rem;
+=======
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-showmore:hover {
+  transform: scale(1.2);
+>>>>>>> 1dd3200f56baff165c754dcf26b456fa43240ce7
 }

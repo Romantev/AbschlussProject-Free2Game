@@ -36,7 +36,11 @@
 
 .header-title {
   position: absolute;
+<<<<<<< HEAD
   left: 10%;
+=======
+  left: 13rem;
+>>>>>>> 1dd3200f56baff165c754dcf26b456fa43240ce7
   bottom: 10%;
 }
 
@@ -44,6 +48,12 @@
   color: white;
   font-size: 4.8rem;
   width: 50%;
+<<<<<<< HEAD
   line-height: 5rem;
   text-align:left;
+=======
+  line-height: 4.5rem;
+  font-family: "Oswald", sans-serif;
+
+>>>>>>> 1dd3200f56baff165c754dcf26b456fa43240ce7
 }

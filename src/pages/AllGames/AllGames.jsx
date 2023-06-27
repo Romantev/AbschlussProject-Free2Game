@@ -1,6 +1,6 @@
-import { useContext } from "react";
 import "./AllGames.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
 import {
   gameContext,
   searchInputContext,
@@ -17,12 +17,15 @@ const AllGames = () => {
   const { searchInput, setSearchInput } = useContext(searchInputContext);
   const { headerImg, setHeaderImg } = useContext(headerImgContext);
   const { gameData, setGameData } = useContext(gameContext);
-  const [showAllGames, setShowAllGames] = useState(false);
 
+  const [showAllGames, setShowAllGames] = useState(false);
   const [selectedData, setSelectedData] = useState([]);
+
   const [selectedPlatform, setSelectedPlatform] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedSortBy, setSelectedSortBy] = useState("");
+
+  const [animateFadeIn, setAnimateFadeIn] = useState(false);
 
   //* ============ fetch if DropDown is selected ============ //
   useEffect(() => {
@@ -68,17 +71,28 @@ const AllGames = () => {
     setShowAllGames(true);
   };
 
+  //* ============ Check for Animation ============ //
+  useEffect(() => {
+    if (filteredData.length > 0) {
+      setAnimateFadeIn(true);
+      setTimeout(() => {
+        setAnimateFadeIn(false);
+      }, 300);
+    }
+  }, [selectedData]);
+
   return (
-    <div className="super-wrapper">
+    <div className={`super-wrapper ${animateFadeIn ? "animate-fade-in" : ""}`}>
       <Menu />
+      <NavBar />
       <div className="wrapper">
-        <NavBar />
         <Header page={headerImg} />
         <DropDown
           platform={setSelectedPlatform}
           genre={setSelectedGenre}
           sortby={setSelectedSortBy}
         />
+
         <main className="main-allgames">
           {filteredData?.slice(0, 8).map((elm, index) => {
             return <GameCardSmall game={elm} key={index} />;

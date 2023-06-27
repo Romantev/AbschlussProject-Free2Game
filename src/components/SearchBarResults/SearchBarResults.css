@@ -33,3 +33,7 @@
   font-weight: lighter;
   color: var(--navydesat);
 }
+
+.search-game-result:hover {
+  background-color: var(--flamingo);
+}

@@ -6,6 +6,7 @@ const BurgerIcon = () => {
       viewBox="0 0 74 74"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="burger-menu"
     >
       <line
         x1="26"

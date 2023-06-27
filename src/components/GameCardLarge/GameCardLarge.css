@@ -1,72 +1,77 @@
 .card-lg {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
-    width: 30vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-lg:hover {
+  transform: scale(1.05);
 }
 
 .card-lg .card-content {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    padding: 0rem;
-    background: var(--navylight);
-    border-top-right-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 0rem;
+  background: var(--navylight);
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  height: 100%;
+  width: 100%;
 }
 
 .card-lg img {
-    height: 100%;
+  height: 100%;
 }
 
 .card-lg .lower-card-content {
-    padding: 4rem 4rem;
-    display: flex;
-    gap: 2rem;
-    margin-left: 0rem;
+  padding: 4rem 4rem;
+  display: flex;
+  gap: 2rem;
+  margin-left: 0rem;
 }
 
 .card-lg .lower-card-content .main-btn {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .card-lg .top-counter-circle {
-    background-color: var(--navydark);
-    color: white;
-    border-radius: 100%;
-    border: 2px solid var(--flamingo);
-    width: max-content;
-    text-align: center;
-    padding: 1rem 1.7rem;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-weight: 600;
+  background-color: var(--navydark);
+  color: white;
+  border-radius: 100%;
+  border: 2px solid var(--flamingo);
+  width: max-content;
+  text-align: center;
+  padding: 1rem 1.7rem;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: 600;
 }
 
 .wrap-img-circle {
-    position: relative;
-    height: 100%;
+  position: relative;
+  height: 100%;
 }
 
 .card-genre-and-platform {
-    background-color: var(--navylight);
+  background-color: var(--navylight);
 }
 
 .card-lg .card-img {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .card-lg .card-title {
-    font-size: 3rem;
-    text-transform: uppercase;
-    font-family: bold;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-family: bold;
 }
 
 .card-lg .upper-card-content {
-    width: 100%;
+  width: 100%;
 }

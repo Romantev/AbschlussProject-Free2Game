@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import "./SearchBarResults.css";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { searchInputContext } from "../../context/Context";
 
@@ -7,7 +7,6 @@ const SearchBarResults = (props) => {
   const { searchInput, setSearchInput } = useContext(searchInputContext);
 
   const linkfunction = () => {
-    window.location.href = `/${props.game.id}`;
     setSearchInput("");
   };
 

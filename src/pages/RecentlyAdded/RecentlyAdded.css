@@ -1,13 +1,23 @@
+.super-wrapper {
+  width: 100vw;
+}
+
 .wrapper {
-  margin-left: 80px;
   width: 100%;
 }
 
-.cards-container-flexadded {
-  margin-left: 80px;
-  height: 100vw;
-  width: 100vw;
+.cards-container-flex {
+  padding-left: 80px;
   background-color: var(--navydark);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  height: 200px;
+  gap: 3rem;
+  max-width: 140rem;
+}
+
+.btn-right-bottom {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 0 4rem 0;
 }
