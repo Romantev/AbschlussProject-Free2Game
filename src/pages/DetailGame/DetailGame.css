@@ -203,11 +203,7 @@
   border-radius: 1rem;
 }
 
-.detail-game-section
-  .game-requirements
-  .game-requirements-left
-  .game-requirements-left-image
-  div,
+.detail-game-section .game-requirements .game-requirements-left div,
 .detail-game-section
   .game-requirements
   .game-requirements-right

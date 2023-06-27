@@ -29,16 +29,6 @@ const SectionTop4PC = (props) => {
           <h2 className="section-title">
             Top 4 Games for PC in {props.month} {props.year}
           </h2>
-<<<<<<< HEAD
-          <article className="top-4-games">
-            <div className="xl-card-container">
-              <GameCardLarge game={top4PC[0]} />
-            </div>
-            <div className="mid-card-container">
-              <GameCardMiddle game={top4PC[1]} />
-              <GameCardMiddle game={top4PC[2]} />
-              <GameCardMiddle game={top4PC[3]} />
-=======
           <article className="article-recentlyadded">
             <div className="big_flex">
               <GameCardLarge game={top4PC[0]} position="1" />
@@ -47,7 +37,6 @@ const SectionTop4PC = (props) => {
               <GameCardMiddle game={top4PC[1]} position="2" />
               <GameCardMiddle game={top4PC[2]} position="3" />
               <GameCardMiddle game={top4PC[3]} position="4" />
->>>>>>> 1dd3200f56baff165c754dcf26b456fa43240ce7
             </div>
           </article>
           <div className="btn-right-bottom">
