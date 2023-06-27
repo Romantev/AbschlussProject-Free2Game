@@ -6,12 +6,7 @@
   gap: 2rem;
   border-radius: 2rem;
   justify-content: space-between;
-  opacity: 1;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-out;
-}
-
-.animate-fade-in .card-md {
-  opacity: 0;
+  transition: transform 0.3s ease-in-out;
 }
 
 .card-md:hover {
