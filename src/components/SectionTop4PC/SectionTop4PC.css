@@ -1,25 +1,14 @@
-<<<<<<< HEAD
-.top-4-games{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-}
-
-.xl-card-container{
-   
-}
-
-.mid-card-container{
-=======
 .big_flex {
-    width: 100%;
+  width: 100%;
 }
 
 .small-column-flex {
-    width: 100%;
->>>>>>> 1dd3200f56baff165c754dcf26b456fa43240ce7
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-top-4-games {
+  margin: auto;
 }

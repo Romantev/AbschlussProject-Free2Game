@@ -11,17 +11,6 @@
 }
 
 .card-md-hor .card-content {
-<<<<<<< HEAD
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    padding: 0rem;
-    background: var(--navylight);
-    border-top-right-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    border-radius: 2rem;
-    width: 90%;
-=======
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -31,7 +20,6 @@
   border-bottom-right-radius: 2rem;
   border-radius: 2rem;
   width: 100%;
->>>>>>> 1dd3200f56baff165c754dcf26b456fa43240ce7
 }
 
 .card-md-hor img {
