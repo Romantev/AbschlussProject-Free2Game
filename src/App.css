@@ -94,17 +94,18 @@ img {
 
 .title-logo {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20rem;
-  gap: 10rem;
-  animation-name: scaleTitle;
-  animation-duration: 4s;
-  animation-timing-function: linear;
+  margin-top: 6rem;
+  gap: 1rem;
 }
 
 .title-logo img {
   width: 50vw;
+  animation-name: scaleTitle;
+  animation-duration: 3.3s;
+  animation-timing-function: linear;
 }
 
 #loader {
