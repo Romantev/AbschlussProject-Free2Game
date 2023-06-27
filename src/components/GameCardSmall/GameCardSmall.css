@@ -1,7 +1,7 @@
 .card-md {
   display: flex;
   flex-direction: column;
-  min-width: 250px;
+  width: 30rem;
   background-color: var(--navylight);
   gap: 2rem;
   border-radius: 2rem;

@@ -7,7 +7,6 @@ const SearchBarResults = (props) => {
   const { searchInput, setSearchInput } = useContext(searchInputContext);
 
   const linkfunction = () => {
-    window.location.href = `/${props.game.id}`;
     setSearchInput("");
   };
 

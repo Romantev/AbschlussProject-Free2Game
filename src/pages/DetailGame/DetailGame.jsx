@@ -3,7 +3,6 @@ import "./DetailGame.css";
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { headerImgContext } from "../../context/Context";
-
 import Windows from "../../assets/Platforms/Windows.svg";
 import Browser from "../../assets/Platforms/Browser.svg";
 import Button from "../../components/Button/Button.jsx";
@@ -12,7 +11,6 @@ import Menu from "../../components/Menu/Menu.jsx";
 
 const DetailGame = () => {
   const { headerImg, setHeaderImg } = useContext(headerImgContext);
-
   const params = useParams();
   const [gameData, setGameData] = useState();
 
@@ -30,7 +28,7 @@ const DetailGame = () => {
       .catch((err) => {
         console.log("Fehler beim Laden", err);
       });
-  }, []);
+  }, [params]);
 
   return (
     <div className="details-wrapper">
