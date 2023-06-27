@@ -28,7 +28,7 @@ const DetailGame = () => {
       .catch((err) => {
         console.log("Fehler beim Laden", err);
       });
-  }, []);
+  }, [params]);
 
   return (
     <div className="details-wrapper">
